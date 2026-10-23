@@ -1,0 +1,7 @@
+# local preview tooling / artifacts (not part of the published profile)
+preview.html
+preview*.png
+index.html
+tools/preview.py
+*.log
+.DS_Store
