@@ -180,7 +180,7 @@
     <!-- corner brackets -->
     <g stroke="#7dd3fc" stroke-opacity=".32" stroke-width="1.2" fill="none">
       <path d="M28 44 V28 H44"/>
-      <path d="M1156 28 H1172 V44"/>
+      <path d="M1152 314 H1172 V294"/>
     </g>
 
     <!-- CRT / vignette / sweep -->

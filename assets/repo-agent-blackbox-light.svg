@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="250" viewBox="0 0 1200 250" role="img" aria-label="agent-blackbox — local-first flight recorder for AI coding agents">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="264" viewBox="0 0 1200 264" role="img" aria-label="agent-blackbox — local-first flight recorder for AI coding agents">
 
   <defs>
     <linearGradient id="pBg" x1="0" y1="0" x2="1" y2="1">
@@ -30,28 +30,29 @@
     @keyframes blink { 0%,49% { opacity:1 } 50%,100% { opacity:0 } }
     .cur { animation:blink 1.15s steps(1,end) infinite }
   </style>
-  <rect x="0.75" y="0.75" width="1198.5" height="248.5" rx="18" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".5" stroke-width="1.5"/>
-  <path d="M48 20 V14 H64" stroke="#0ea5e9" stroke-opacity=".4" stroke-width="1.2" fill="none"/>
-  <path d="M1136 20 V14 H1152" stroke="#0ea5e9" stroke-opacity=".4" stroke-width="1.2" fill="none"/>
+  <rect x="0.75" y="0.75" width="1198.5" height="262.5" rx="18" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".5" stroke-width="1.5"/>
+  <path d="M28 44 V28 H44" stroke="#0ea5e9" stroke-opacity=".38" stroke-width="1.4" fill="none"/>
+  <path d="M1172 220 V236 H1156" stroke="#0ea5e9" stroke-opacity=".38" stroke-width="1.4" fill="none"/>
   <text x="48" y="44" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="10" letter-spacing="2.6" fill="#64748b">OPEN SOURCE · 01</text>
-  <text x="48" y="90" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif" font-size="32" font-weight="700" fill="#0f172a" letter-spacing=".2">agent-blackbox</text>
-  <text x="48" y="122" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif" font-size="13" fill="#64748b">AI 编程 agent 的飞行记录仪：本地优先，回放、归因与对比多 runtime 会话。</text>
-  <text x="48" y="145" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif" font-size="11.5" fill="#64748b">Flight recorder for AI coding agents — local-first replay, attribution and diff.</text>
-  <g transform="translate(48 0)"><rect x="0" y="188" width="59" height="24" rx="7" fill="#0e7490" fill-opacity=".1" stroke="#0e7490" stroke-opacity=".4"/><text x="30" y="204" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="9" letter-spacing="1.4" fill="#0e7490" text-anchor="middle">REPLAY</text></g><g transform="translate(117.2 0)"><rect x="0" y="188" width="45" height="24" rx="7" fill="#15803d" fill-opacity=".1" stroke="#15803d" stroke-opacity=".4"/><text x="22" y="204" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="9" letter-spacing="1.4" fill="#15803d" text-anchor="middle">COST</text></g><g transform="translate(172.0 0)"><rect x="0" y="188" width="38" height="24" rx="7" fill="#db2777" fill-opacity=".1" stroke="#db2777" stroke-opacity=".4"/><text x="19" y="204" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="9" letter-spacing="1.4" fill="#db2777" text-anchor="middle">MIT</text></g><g transform="translate(219.6 0)"><rect x="0" y="188" width="95" height="24" rx="7" fill="#c2410c" fill-opacity=".1" stroke="#c2410c" stroke-opacity=".4"/><text x="48" y="204" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="9" letter-spacing="1.4" fill="#c2410c" text-anchor="middle">LOCAL-FIRST</text></g>
+  <text x="48" y="100" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif" font-size="34" font-weight="700" fill="#0f172a" letter-spacing=".2">agent-blackbox</text>
+  <text x="48" y="134" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif" font-size="14.5" fill="#94a3b8">AI 编程 agent 的飞行记录仪：本地优先，回放、归因与对比多 runtime 会话。</text>
+  <text x="48" y="158" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif" font-size="12" fill="#64748b">Flight recorder for AI coding agents — local-first replay, attribution and diff.</text>
+  <g transform="translate(48 0)"><rect x="0" y="194" width="62" height="26" rx="7" fill="#0e7490" fill-opacity=".12" stroke="#0e7490" stroke-opacity=".45"/><text x="31" y="211" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="9.5" letter-spacing="1.4" fill="#0e7490" text-anchor="middle">REPLAY</text></g><g transform="translate(120.4 0)"><rect x="0" y="194" width="48" height="26" rx="7" fill="#15803d" fill-opacity=".12" stroke="#15803d" stroke-opacity=".45"/><text x="24" y="211" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="9.5" letter-spacing="1.4" fill="#15803d" text-anchor="middle">COST</text></g><g transform="translate(178.0 0)"><rect x="0" y="194" width="70" height="26" rx="7" fill="#db2777" fill-opacity=".12" stroke="#db2777" stroke-opacity=".45"/><text x="35" y="211" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="9.5" letter-spacing="1.4" fill="#db2777" text-anchor="middle">COMPARE</text></g><g transform="translate(257.8 0)"><rect x="0" y="194" width="99" height="26" rx="7" fill="#c2410c" fill-opacity=".12" stroke="#c2410c" stroke-opacity=".45"/><text x="50" y="211" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="9.5" letter-spacing="1.4" fill="#c2410c" text-anchor="middle">LOCAL-FIRST</text></g>
+  <text x="48" y="248" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="9.5" letter-spacing="1.2" fill="#64748b">TypeScript · MIT · Node ≥ 22.19 · 零运行时依赖</text>
+  <text x="1152" y="44" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="10" letter-spacing="1.4" fill="url(#pText)" text-anchor="end">VIEW ON GITHUB ↗</text>
   <g>
-    <rect x="742" y="72" width="410" height="132" rx="12" fill="#f1f5f9" stroke="#c7d2e3" stroke-opacity=".9"/>
-    <rect x="742" y="72" width="410" height="26" rx="12" fill="#f1f5f9"/>
-    <circle cx="760" cy="85" r="3.2" fill="#dc2626" opacity=".7"/>
-    <circle cx="772" cy="85" r="3.2" fill="#b45309" opacity=".7"/>
-    <circle cx="784" cy="85" r="3.2" fill="#15803d" opacity=".7"/>
-    <text x="800" y="89" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="8.5" letter-spacing="1.2" fill="#64748b">terminal · quick start</text>
-    <text x="762" y="126" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="10.5" fill="#64748b">$</text>
-    <text x="778" y="126" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="10.5" fill="#94a3b8">npm install</text>
-    <text x="762" y="148" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="10.5" fill="#64748b">$</text>
-    <text x="778" y="148" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="10.5" fill="#0e7490">npm run demo:ui</text>
-    <text x="762" y="176" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="10.5" fill="#15803d">✓ local-first</text>
-    <rect x="853" y="164" width="6" height="12" rx="1.5" fill="#0e7490" class="cur"/>
-    <text x="868" y="176" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif" font-size="10" fill="#64748b">无遥测 · 零运行时依赖</text>
+    <rect x="742" y="84" width="410" height="150" rx="12" fill="#f1f5f9" stroke="#c7d2e3" stroke-opacity=".9"/>
+    <rect x="742" y="84" width="410" height="28" rx="12" fill="#f1f5f9"/>
+    <circle cx="760" cy="98" r="3.2" fill="#dc2626" opacity=".7"/>
+    <circle cx="772" cy="98" r="3.2" fill="#b45309" opacity=".7"/>
+    <circle cx="784" cy="98" r="3.2" fill="#15803d" opacity=".7"/>
+    <text x="800" y="102" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="8.5" letter-spacing="1.2" fill="#64748b">terminal · quick start</text>
+    <text x="762" y="142" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="11" fill="#64748b">$</text>
+    <text x="778" y="142" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="11" fill="#94a3b8">npm install</text>
+    <text x="762" y="166" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="11" fill="#64748b">$</text>
+    <text x="778" y="166" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="11" fill="#0e7490">npm run demo:ui</text>
+    <text x="762" y="198" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="11" fill="#15803d">✓ local-first</text>
+    <rect x="857" y="186" width="6" height="13" rx="1.5" fill="#0e7490" class="cur"/>
+    <text x="872" y="198" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif" font-size="10.5" fill="#64748b">无遥测 · 零运行时依赖</text>
   </g>
-  <text x="1152" y="224" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="10" letter-spacing="1.4" fill="url(#pText)" text-anchor="end">VIEW ON GITHUB ↗</text>
 </svg>
