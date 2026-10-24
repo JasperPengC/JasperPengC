@@ -1,7 +1,8 @@
 # local preview tooling / artifacts (not part of the published profile)
-preview.html
+preview*.html
 preview*.png
 index.html
+light_sheet.html
 tools/preview.py
 *.log
 .DS_Store

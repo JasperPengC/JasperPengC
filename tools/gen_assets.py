@@ -13,6 +13,7 @@ from __future__ import annotations
 
 import html
 import math
+import re
 import pathlib
 import random
 
@@ -49,6 +50,77 @@ def write(name: str, body: str) -> None:
     path = ASSETS / name
     path.write_text(body, encoding="utf-8")
     print(f"  wrote {path.relative_to(ROOT)} ({len(body) / 1024:.1f} kB)")
+    if name.endswith(".svg"):
+        day = lighten(body, name)
+        day_path = ASSETS / f"{name[:-4]}-light.svg"
+        day_path.write_text(day, encoding="utf-8")
+        print(f"  wrote {day_path.relative_to(ROOT)} ({len(day) / 1024:.1f} kB)")
+
+
+# --------------------------------------------------------------------------
+# light theme (day mode) — derived from the dark SVGs by palette remapping
+# --------------------------------------------------------------------------
+
+LIGHT_MAP = {
+    # surfaces
+    "#05070f": "#ffffff", "#070c1a": "#f6f8ff", "#090513": "#f8f5ff",
+    "#0a1020": "#f3f6ff", "#070b14": "#fbfcff", "#0a0713": "#f5f3ff",
+    "#04060e": "#ffffff", "#0b1020": "#bae6fd", "#020617": "#ffffff",
+    "#05080f": "#f1f5f9", "#0a1224": "#f1f5f9", "#0b1220": "#ffffff",
+    "#1e3a5f": "#c7d2e3", "#1e293b": "#dbe3ef", "#01030a": "#ffffff",
+    # text (inverted hierarchy)
+    "#e6edf7": "#0f172a", "#e2e8f0": "#0f172a", "#dbe7f5": "#0f172a",
+    "#f0f6fc": "#0f172a", "#cbd5e1": "#334155", "#b6c2d4": "#334155",
+    "#a8b3c7": "#475569", "#94a3b8": "#475569", "#8fa0b8": "#475569",
+    "#7c8aa5": "#64748b", "#64748b": "#64748b", "#475569": "#64748b",
+    "#334155": "#94a3b8",
+    # accents (darker for contrast on white)
+    "#67e8f9": "#0891b2", "#22d3ee": "#0e7490", "#38bdf8": "#0284c7",
+    "#7dd3fc": "#0ea5e9", "#a5f3fc": "#0e7490", "#cffafe": "#0891b2",
+    "#bae6fd": "#0369a1", "#ddd6fe": "#7c3aed", "#fbcfe8": "#db2777",
+    "#c4b5fd": "#7c3aed", "#a78bfa": "#6d28d9", "#c084fc": "#7e22ce",
+    "#8b5cf6": "#6d28d9", "#f472b6": "#db2777", "#fb7185": "#e11d48",
+    "#f9a8d4": "#db2777", "#4ade80": "#15803d", "#86efac": "#15803d",
+    "#10b981": "#047857", "#fb923c": "#c2410c", "#fdba74": "#c2410c",
+    "#fbbf24": "#b45309", "#facc15": "#a16207", "#f7df1e": "#a16207",
+    "#f89820": "#c2410c", "#3b82f6": "#1d4ed8", "#61dafb": "#0e7490",
+    "#42b883": "#0f766e", "#9feaf9": "#0e7490", "#ffc131": "#b45309",
+    "#5b8cba": "#1e40af", "#4a90c2": "#1d4ed8", "#ff6b5b": "#dc2626",
+    "#e879f9": "#a21caf", "#84cc16": "#4d7c0f", "#fc6d26": "#c2410c",
+    "#2dd4bf": "#0f766e", "#6db33f": "#15803d", "#e0f2fe": "#0ea5e9",
+    "#f0f9ff": "#0e7490", "#f87171": "#dc2626", "#9ae6ff": "#94a3b8",
+    "#7c3aed": "#6d28d9", "#6d28d9": "#5b21b6", "#0891b2": "#0e7490",
+}
+
+
+def _scale_gradient_opacity(svg: str, gid: str, factor: float) -> str:
+    m = re.search(r'(<radialGradient id="%s"[\s\S]*?</radialGradient>)' % re.escape(gid), svg)
+    if not m:
+        return svg
+    block = m.group(1)
+    scaled = re.sub(
+        r'stop-opacity="([0-9.]+)"',
+        lambda mm: 'stop-opacity="%.3f"' % (float(mm.group(1)) * factor),
+        block,
+    )
+    return svg.replace(block, scaled)
+
+
+def lighten(svg: str, name: str) -> str:
+    # day mode: no star field / sparkles in the hero sky
+    if name == "hero.svg":
+        svg = re.sub(r'<circle[^>]*style="animation:twinkle[^"]*"[^>]*/>\s*', '', svg)
+        svg = re.sub(r'<path d="[^"]*"[^>]*style="animation:twinkle[^"]*"[^>]*/>\s*', '', svg)
+        # drop the blurred glow copy of the wordmark
+        svg = re.sub(r'\s*<text[^>]*filter="url\(#soft2\)"[^>]*>JASPER</text>', '', svg)
+    # palette remap (longest first so prefixes never collide)
+    for k in sorted(LIGHT_MAP, key=len, reverse=True):
+        svg = svg.replace(k, LIGHT_MAP[k])
+    # softer lights for daytime
+    for gid, f in (("auroraCyan", .42), ("auroraViolet", .42), ("auroraPink", .42),
+                   ("orbHalo", .5), ("vignette", .5)):
+        svg = _scale_gradient_opacity(svg, gid, f)
+    return svg
 
 
 # --------------------------------------------------------------------------

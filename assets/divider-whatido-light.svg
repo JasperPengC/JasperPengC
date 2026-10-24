@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="50" viewBox="0 0 1200 50" role="img" aria-label="WHAT I DO · 我在做什么">
+
+  <defs>
+    <linearGradient id="pBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3f6ff"/>
+      <stop offset=".55" stop-color="#fbfcff"/>
+      <stop offset="1" stop-color="#f5f3ff"/>
+    </linearGradient>
+    <linearGradient id="pBorder" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0e7490" stop-opacity=".55"/>
+      <stop offset=".48" stop-color="#5b21b6" stop-opacity=".16"/>
+      <stop offset="1" stop-color="#db2777" stop-opacity=".42"/>
+    </linearGradient>
+    <linearGradient id="pAccent" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0e7490"/>
+      <stop offset="1" stop-color="#5b21b6"/>
+    </linearGradient>
+    <linearGradient id="pLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0e7490" stop-opacity=".65"/>
+      <stop offset=".4" stop-color="#5b21b6" stop-opacity=".3"/>
+      <stop offset="1" stop-color="#5b21b6" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="pText" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0e7490"/>
+      <stop offset=".55" stop-color="#0e7490"/>
+      <stop offset="1" stop-color="#5b21b6"/>
+    </linearGradient>
+  </defs>
+  <rect x="0" y="4" width="263" height="42" rx="10" fill="#fbfcff" stroke="#dbe3ef" stroke-opacity=".9"/>
+  <rect x="0.75" y="4.75" width="262" height="40.5" rx="9" fill="none" stroke="url(#pBorder)" stroke-opacity=".35"/>
+  <rect x="0" y="13" width="3" height="24" rx="1.5" fill="url(#pAccent)"/>
+  <text x="18" y="29" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="10.5" letter-spacing="1.6" fill="#64748b">[ 02 ]</text>
+  <text x="79.4" y="30" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', 'Courier New', monospace" font-size="12.5" letter-spacing="2.2" fill="#0f172a">WHAT I DO</text>
+  <text x="180.7" y="30" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif" font-size="12.5" fill="#64748b">我在做什么</text>
+  <defs>
+    <linearGradient id="dl" x1="293" y1="0" x2="1188" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#0e7490" stop-opacity=".55"/>
+      <stop offset=".45" stop-color="#5b21b6" stop-opacity=".22"/>
+      <stop offset="1" stop-color="#5b21b6" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <path d="M293 28 H1188" stroke="url(#dl)" stroke-width="1.4"/>
+  <rect x="284" y="25" width="6" height="6" rx="1.5" transform="rotate(45 287 28)" fill="#0e7490" opacity=".7"/>
+</svg>
