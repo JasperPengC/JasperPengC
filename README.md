@@ -23,9 +23,9 @@
 
 **AI 应用 / 智能体方向的全栈工程师。** 长期做商业软件研发，习惯把一个想法独立做成能上线、能维护的产品——从架构、核心代码，到部署、观测与迭代。
 
-最近主要在做智能体、RAG 与 MCP 工具链；也喜欢把好用的 Agent 工具拆开研究，再自己造一个。
+最近主要在做智能体、Agent 可观测性、RAG 与 MCP 工具链；也喜欢把好用的 Agent 工具拆开研究，再自己造一个。
 
-*Full-stack engineer focused on AI applications & agents. I like taking an idea all the way to a maintainable product — architecture, core code, deployment and iteration. Lately: agents, RAG and MCP tooling. I also enjoy taking good agent tools apart and building my own.*
+*Full-stack engineer focused on AI applications & agents. I like taking an idea all the way to a maintainable product — architecture, core code, deployment and iteration. Lately: agents, agent observability, RAG and MCP tooling. I also enjoy taking good agent tools apart and building my own.*
 
 > 工具会被用旧，所以一直在造新的。
 > *Tools get old. Keep building.*
@@ -48,14 +48,19 @@
     <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-opensource.svg" alt="" width="100%">
   </picture>
 
-<a href="https://github.com/JasperPengC/dsh-mcp-skills-board"><picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/featured-repo.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/featured-repo-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/featured-repo.svg" alt="dsh-mcp-skills-board" width="100%">
+<a href="https://github.com/JasperPengC/agent-blackbox"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-agent-blackbox.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-agent-blackbox-light.svg">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-agent-blackbox.svg" alt="agent-blackbox" width="100%">
   </picture></a>
 
+<a href="https://github.com/JasperPengC/dsh-mcp-skills-board"><picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-dsh-mcp-skills-board.svg">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-dsh-mcp-skills-board-light.svg">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-dsh-mcp-skills-board.svg" alt="dsh-mcp-skills-board" width="100%">
+  </picture></a>
 
-<sub>目前公开的原创开源就这一个，其它还在打磨中，做完再放上来 · More open source coming.</sub>
+<sub>公开的原创开源都在这里，其它还在打磨中，做完再放上来 · More open source coming.</sub>
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-stack.svg">

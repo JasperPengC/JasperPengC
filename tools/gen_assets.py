@@ -351,8 +351,8 @@ def hero() -> str:
     {''.join(chips)}
     <g opacity=".92">
       <text x="600" y="118" font-family="{FONT_MONO}" font-size="10" letter-spacing="2.4" fill="{MUTED}">$ cat .now</text>
-      <text x="580" y="145" font-family="{FONT_MONO}" font-size="12.5" fill="#7c8aa5">├─ <tspan fill="#bae6fd">dsh-mcp-skills-board</tspan> <tspan fill="#475569">(MIT)</tspan></text>
-      <text x="580" y="168" font-family="{FONT_MONO}" font-size="12.5" fill="#7c8aa5">├─ <tspan fill="#c4b5fd">agents / rag / mcp</tspan></text>
+      <text x="580" y="145" font-family="{FONT_MONO}" font-size="12.5" fill="#7c8aa5">├─ <tspan fill="#bae6fd">agent-blackbox</tspan> <tspan fill="#475569">(MIT)</tspan></text>
+      <text x="580" y="168" font-family="{FONT_MONO}" font-size="12.5" fill="#7c8aa5">├─ <tspan fill="#c4b5fd">dsh-mcp-skills-board</tspan> <tspan fill="#475569">(MIT)</tspan></text>
       <text x="580" y="191" font-family="{FONT_MONO}" font-size="12.5" fill="#7c8aa5">└─ <tspan fill="#f9a8d4">open to AI Agent roles</tspan></text>
       <text x="580" y="214" font-family="{FONT_MONO}" font-size="12.5" fill="{SLATE}"><tspan fill="{GREEN}">●</tspan> keep building.</text>
     </g>
@@ -577,7 +577,7 @@ def capability_card() -> str:
     W, H = 1200, 312
     cols = [
         ("01", "AI AGENTS", "智能体", "#4ade80",
-         ["智能体架构与云端部署", "MCP Server · Skills 工具链", "多 Agent 协作 / 工具调用"]),
+         ["智能体架构与云端部署", "MCP Server · Skills 工具链", "多 Agent 协作 · 可观测性"]),
         ("02", "RAG", "知识库", "#67e8f9",
          ["混合检索 + RRF 重排", "文档处理 / 多租户", "权限与数据隔离"]),
         ("03", "FULL-STACK", "全栈交付", "#a78bfa",
@@ -677,9 +677,9 @@ def stack_matrix() -> str:
 # --------------------------------------------------------------------------
 
 
-def featured_repo_card() -> str:
+def featured_repo_card(index: str, name: str, cn: str, en: str, chips, cmd1: str,
+                      cmd2: str, status: str, status_note: str, aria: str) -> str:
     W, H = 1200, 250
-    chips = [("MCP", "#67e8f9"), ("SKILLS", "#a78bfa"), ("MIT", "#f472b6"), ("NPM", "#fb923c")]
     chip_svg, cx = [], 48
     for label, color in chips:
         cw = 16 + len(label) * 7.2
@@ -690,7 +690,10 @@ def featured_repo_card() -> str:
             f'</g>'
         )
         cx += cw + 10
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="dsh-mcp-skills-board — open source MCP and Skills panel">
+    status_w = mono_w(f"✓ {status}", 10.5)
+    cursor_x = 762 + status_w + 9
+    note_x = cursor_x + 15
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{esc(aria)}">
 {panel_defs()}
   <style>
     @keyframes blink {{ 0%,49% {{ opacity:1 }} 50%,100% {{ opacity:0 }} }}
@@ -699,10 +702,10 @@ def featured_repo_card() -> str:
   <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="18" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".5" stroke-width="1.5"/>
   <path d="M48 20 V14 H64" stroke="#7dd3fc" stroke-opacity=".4" stroke-width="1.2" fill="none"/>
   <path d="M1136 20 V14 H1152" stroke="#7dd3fc" stroke-opacity=".4" stroke-width="1.2" fill="none"/>
-  <text x="48" y="44" font-family="{FONT_MONO}" font-size="10" letter-spacing="2.6" fill="#475569">OPEN SOURCE · 01</text>
-  <text x="48" y="90" font-family="{FONT_SANS}" font-size="32" font-weight="700" fill="#e6edf7" letter-spacing=".2">dsh-mcp-skills-board</text>
-  <text x="48" y="122" font-family="{FONT_SANS}" font-size="13" fill="#a8b3c7">DeepSeek Harness 的 MCP / 技能管理面板：技能四态开关、MCP 增删改、配置持久化。</text>
-  <text x="48" y="145" font-family="{FONT_SANS}" font-size="11.5" fill="#64748b">Codex-style MCP &amp; Skills panel for DeepSeek Harness — search, toggles, live config.</text>
+  <text x="48" y="44" font-family="{FONT_MONO}" font-size="10" letter-spacing="2.6" fill="#475569">{esc(index)}</text>
+  <text x="48" y="90" font-family="{FONT_SANS}" font-size="32" font-weight="700" fill="#e6edf7" letter-spacing=".2">{esc(name)}</text>
+  <text x="48" y="122" font-family="{FONT_SANS}" font-size="13" fill="#a8b3c7">{esc(cn)}</text>
+  <text x="48" y="145" font-family="{FONT_SANS}" font-size="11.5" fill="#64748b">{esc(en)}</text>
   {''.join(chip_svg)}
   <g>
     <rect x="742" y="72" width="410" height="132" rx="12" fill="#05080f" stroke="#1e3a5f" stroke-opacity=".9"/>
@@ -710,76 +713,20 @@ def featured_repo_card() -> str:
     <circle cx="760" cy="85" r="3.2" fill="#f87171" opacity=".7"/>
     <circle cx="772" cy="85" r="3.2" fill="#fbbf24" opacity=".7"/>
     <circle cx="784" cy="85" r="3.2" fill="#4ade80" opacity=".7"/>
-    <text x="800" y="89" font-family="{FONT_MONO}" font-size="8.5" letter-spacing="1.2" fill="#475569">terminal · install</text>
+    <text x="800" y="89" font-family="{FONT_MONO}" font-size="8.5" letter-spacing="1.2" fill="#475569">terminal · quick start</text>
     <text x="762" y="126" font-family="{FONT_MONO}" font-size="10.5" fill="#475569">$</text>
-    <text x="778" y="126" font-family="{FONT_MONO}" font-size="10.5" fill="#cbd5e1">dsh plugin --profile desktop add</text>
-    <text x="778" y="148" font-family="{FONT_MONO}" font-size="10.5" fill="#67e8f9">dsh-mcp-skills-board</text>
-    <text x="762" y="176" font-family="{FONT_MONO}" font-size="10.5" fill="#4ade80">✓ installed</text>
-    <rect x="858" y="164" width="6" height="12" rx="1.5" fill="#67e8f9" class="cur"/>
-    <text x="872" y="176" font-family="{FONT_SANS}" font-size="10" fill="#64748b">侧栏即可见 · ready in the sidebar</text>
+    <text x="778" y="126" font-family="{FONT_MONO}" font-size="10.5" fill="#cbd5e1">{esc(cmd1)}</text>
+    <text x="762" y="148" font-family="{FONT_MONO}" font-size="10.5" fill="#475569">$</text>
+    <text x="778" y="148" font-family="{FONT_MONO}" font-size="10.5" fill="#67e8f9">{esc(cmd2)}</text>
+    <text x="762" y="176" font-family="{FONT_MONO}" font-size="10.5" fill="#4ade80">✓ {esc(status)}</text>
+    <rect x="{cursor_x:.0f}" y="164" width="6" height="12" rx="1.5" fill="#67e8f9" class="cur"/>
+    <text x="{note_x:.0f}" y="176" font-family="{FONT_SANS}" font-size="10" fill="#64748b">{esc(status_note)}</text>
   </g>
   <text x="1152" y="224" font-family="{FONT_MONO}" font-size="10" letter-spacing="1.4" fill="url(#pText)" text-anchor="end">VIEW ON GITHUB ↗</text>
 </svg>
 """
 
 
-# --------------------------------------------------------------------------
-# footer
-# --------------------------------------------------------------------------
-# --------------------------------------------------------------------------
-# footer
-# --------------------------------------------------------------------------
-# --------------------------------------------------------------------------
-# footer
-# --------------------------------------------------------------------------
-# --------------------------------------------------------------------------
-# system readout card
-# --------------------------------------------------------------------------
-
-
-def readout_card(repos: int, bookmarks: int, since: str, original: int,
-                 timeline, snapshot: str) -> str:
-    W, H = 1200, 250
-    metrics = [
-        ("PUBLIC REPOS", str(repos)),
-        ("BOOKMARK FORKS", str(bookmarks)),
-        ("ON GITHUB SINCE", since),
-        ("ORIGINAL PROJECTS", f"{original:02d}"),
-    ]
-    cells = []
-    for i, (label, value) in enumerate(metrics):
-        cx = 48 + (i % 2) * 262
-        cy = 104 + (i // 2) * 76
-        cells.append(
-            f'<text x="{cx}" y="{cy}" font-family="{FONT_MONO}" font-size="9.5" letter-spacing="2.2" fill="#475569">{label}</text>'
-            f'<text x="{cx}" y="{cy + 34}" font-family="{FONT_MONO}" font-size="30" font-weight="700" fill="url(#pText)">{esc(value)}</text>'
-        )
-    rows = []
-    for i, (date, text, color) in enumerate(timeline):
-        ty = 134 + i * 29
-        rows.append(
-            f'<text x="676" y="{ty}" font-family="{FONT_MONO}" font-size="9.5" letter-spacing=".8" fill="#64748b" text-anchor="end">{esc(date)}</text>'
-            f'<circle cx="694" cy="{ty - 3.5}" r="3.2" fill="{color}"/>'
-            f'<text x="710" y="{ty}" font-family="{FONT_SANS}" font-size="11.5" fill="#a8b3c7">{esc(text)}</text>'
-        )
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Profile telemetry: {repos} public repos, {bookmarks} bookmarked forks">
-{panel_defs()}
-  <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="18" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".45" stroke-width="1.5"/>
-  <path d="M48 20 V14 H64" stroke="#7dd3fc" stroke-opacity=".4" stroke-width="1.2" fill="none"/>
-  <path d="M1136 20 V14 H1152" stroke="#7dd3fc" stroke-opacity=".4" stroke-width="1.2" fill="none"/>
-  <text x="48" y="46" font-family="{FONT_MONO}" font-size="11" letter-spacing="3.2" fill="#67e8f9" opacity=".8">// PROFILE TELEMETRY</text>
-  <text x="1152" y="46" font-family="{FONT_MONO}" font-size="9" letter-spacing="1.8" fill="#475569" text-anchor="end">SNAPSHOT · {esc(snapshot)}</text>
-  <path d="M48 66 H1152" stroke="#22d3ee" stroke-opacity=".12" stroke-width="1"/>
-  {''.join(cells)}
-  <path d="M560 90 V226" stroke="#1e293b" stroke-opacity=".8" stroke-width="1"/>
-  <text x="620" y="96" font-family="{FONT_MONO}" font-size="9.5" letter-spacing="2.2" fill="#475569">RECENT ACTIVITY · 最近动态</text>
-  <path d="M694 124 V222" stroke="#1e293b" stroke-opacity=".9" stroke-width="1"/>
-  {''.join(rows)}
-</svg>
-"""
-
-
-# --------------------------------------------------------------------------
 # --------------------------------------------------------------------------
 # footer
 # --------------------------------------------------------------------------
@@ -827,42 +774,6 @@ def footer() -> str:
 CARD_W, CARD_H = 500, 160
 
 
-def repo_card(index: str, name: str, cn: str, en: str, lang: str, lang_color: str,
-              stars: int, tag: str, tag_color: str) -> str:
-    name_size = 21
-    if sans_w(name, name_size) > 350:
-        name = name[:24] + "…"
-    cn_lines = wrap_px(cn, 12.5, 442)[:1]
-    en_lines = wrap_px(en, 11.5, 442)[:1]
-    body = []
-    if cn_lines:
-        body.append(f'<text x="28" y="95" font-family="{FONT_SANS}" font-size="12.5" fill="#a8b3c7">{esc(cn_lines[0])}</text>')
-    if en_lines:
-        body.append(f'<text x="28" y="115" font-family="{FONT_SANS}" font-size="11.5" fill="#5b6a80">{esc(en_lines[0])}</text>')
-    star_svg = ""
-    if stars:
-        star_svg = f'<text x="404" y="144" font-family="{FONT_MONO}" font-size="10.5" fill="#fbbf24">★ {stars}</text>'
-    name_size_attr = name_size if sans_w(name, name_size) <= 350 else 19
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{CARD_W}" height="{CARD_H}" viewBox="0 0 {CARD_W} {CARD_H}" role="img" aria-label="{esc(name)}">
-{panel_defs()}
-  <rect x="0.75" y="0.75" width="{CARD_W - 1.5}" height="{CARD_H - 1.5}" rx="14" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".5" stroke-width="1.5"/>
-  <rect x="0.75" y="16" width="2" height="26" rx="1" fill="url(#pAccent)"/>
-  <text x="22" y="35" font-family="{FONT_MONO}" font-size="9.5" letter-spacing="2" fill="#475569">{esc(index)}</text>
-  <text x="28" y="66" font-family="{FONT_SANS}" font-size="{name_size_attr}" font-weight="700" fill="#e6edf7" letter-spacing=".2">{esc(name)}</text>
-  <g transform="translate(370 21)">
-    <rect x="0" y="0" width="102" height="21" rx="6" fill="{tag_color}" fill-opacity=".1" stroke="{tag_color}" stroke-opacity=".45"/>
-    <text x="51" y="14.5" font-family="{FONT_MONO}" font-size="8.5" letter-spacing="1.4" fill="{tag_color}" text-anchor="middle">{esc(tag)}</text>
-  </g>
-  {''.join(body)}
-  <path d="M28 126 H472" stroke="#22d3ee" stroke-opacity=".1" stroke-width="1"/>
-  <circle cx="34" cy="143" r="4.2" fill="{lang_color}"/>
-  <text x="46" y="147" font-family="{FONT_MONO}" font-size="10.5" fill="#8fa0b8">{esc(lang)}</text>
-  {star_svg}
-  <text x="452" y="148" font-family="{FONT_MONO}" font-size="16" fill="url(#pText)" text-anchor="end">↗</text>
-</svg>
-"""
-
-
 def main() -> None:
     print("generating neon assets …")
     write("hero.svg", hero())
@@ -875,7 +786,36 @@ def main() -> None:
     write("capability.svg", capability_card())
     write("stack.svg", stack_marquee())
     write("stack-matrix.svg", stack_matrix())
-    write("featured-repo.svg", featured_repo_card())
+    write(
+        "repo-agent-blackbox.svg",
+        featured_repo_card(
+            index="OPEN SOURCE · 01",
+            name="agent-blackbox",
+            cn="AI 编程 agent 的飞行记录仪：本地优先，回放、归因与对比多 runtime 会话。",
+            en="Flight recorder for AI coding agents — local-first replay, attribution and diff.",
+            chips=[("REPLAY", "#67e8f9"), ("COST", "#4ade80"), ("MIT", "#f472b6"), ("LOCAL-FIRST", "#fb923c")],
+            cmd1="npm install",
+            cmd2="npm run demo:ui",
+            status="local-first",
+            status_note="无遥测 · 零运行时依赖",
+            aria="agent-blackbox — local-first flight recorder for AI coding agents",
+        ),
+    )
+    write(
+        "repo-dsh-mcp-skills-board.svg",
+        featured_repo_card(
+            index="OPEN SOURCE · 02",
+            name="dsh-mcp-skills-board",
+            cn="DSH 的 MCP / 技能管理面板：四态开关、MCP 增删改、导入导出与模板。",
+            en="Codex-style MCP & Skills panel for DeepSeek Harness — toggles, templates, import/export.",
+            chips=[("MCP", "#67e8f9"), ("SKILLS", "#a78bfa"), ("MIT", "#f472b6"), ("NPM", "#fb923c")],
+            cmd1="dsh plugin --profile desktop add",
+            cmd2="dsh-mcp-skills-board",
+            status="installed",
+            status_note="侧栏即可见 · ready in the sidebar",
+            aria="dsh-mcp-skills-board — MCP and Skills panel for DeepSeek Harness",
+        ),
+    )
 
 
 if __name__ == "__main__":
