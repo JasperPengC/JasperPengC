@@ -348,7 +348,7 @@ def hero() -> str:
     <path d="M75 215 H336" stroke="url(#lineFill)" stroke-width="1.6"/>
     <rect x="334" y="210.5" width="9" height="9" rx="2" transform="rotate(45 338.5 215)" fill="{CYAN}" opacity=".85"/>
     <text x="75" y="249" font-family="{FONT_MONO}" font-size="17" letter-spacing=".6" fill="#a5f3fc"><tspan fill="{VIOLET}">&gt;</tspan> AI APPLICATION &amp; AGENT ENGINEER</text>
-    <text x="76" y="277" font-family="{FONT_SANS}" font-size="15.5" letter-spacing=".4" fill="{SLATE}">AI 应用 / 智能体 · 资深全栈 · 喜欢把想法做成能用的东西</text>
+    <text x="76" y="277" font-family="{FONT_SANS}" font-size="15.5" letter-spacing=".4" fill="{SLATE}">AI 应用 / 智能体 · 资深全栈 · 把想法做成能上线的产品</text>
     {''.join(chips)}
     <g opacity=".92">
       <text x="600" y="118" font-family="{FONT_MONO}" font-size="10" letter-spacing="2.4" fill="{MUTED}">$ cat .now</text>

@@ -21,11 +21,11 @@
     <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-about.svg" alt="" width="100%">
   </picture>
 
-**AI 应用 / 智能体方向的全栈工程师。** 喜欢把 agent 的黑盒变成能看、能查、能对比的东西——回放、归因、成本；也习惯把一个想法独立做成能上线、能维护的产品。
+**AI 应用 / 智能体方向的全栈工程师。** 喜欢把想法做成能上线的产品，也做背后那些不显眼但重要的系统。
 
 最近主要在做智能体、Agent 可观测性、RAG 与 MCP 工具链；也喜欢把好用的 Agent 工具拆开研究，再自己造一个。
 
-*Full-stack engineer focused on AI applications & agents. I like turning the agent black box into something you can watch, inspect and compare — replay, attribution, cost. I also like taking an idea all the way to a maintainable product. Lately: agents, agent observability, RAG and MCP tooling.*
+*Full-stack engineer focused on AI applications & agents. I like turning ideas into products that actually ship — including the unglamorous systems behind them. Lately: agents, agent observability, RAG and MCP tooling.*
 
 > 工具会被用旧，所以一直在造新的。
 > *Tools get old. Keep building.*
