@@ -21,14 +21,13 @@
     <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-about.svg" alt="" width="100%">
   </picture>
 
-**AI 应用 / 智能体方向的全栈工程师。** 喜欢把想法做成能上线的产品，也做背后那些不显眼但重要的系统。
+写的东西比较杂，从传统项目一路做到 AI 应用。广是挺广，精就谈不上了，慢慢补吧。
 
-最近主要在做智能体、Agent 可观测性、RAG 与 MCP 工具链；也喜欢把好用的 Agent 工具拆开研究，再自己造一个。
+现在写代码基本靠 AI，我负责挑刺、改错、收尾。
 
-*Full-stack engineer focused on AI applications & agents. I like turning ideas into products that actually ship — including the unglamorous systems behind them. Lately: agents, agent observability, RAG and MCP tooling.*
+*Pretty mixed bag — traditional projects all the way to AI applications. Wide, sure; deep, not so much. Filling in the gaps as I go.*
 
-> 工具会被用旧，所以一直在造新的。
-> *Tools get old. Keep building.*
+*These days AI writes most of the code; I do the nitpicking, fixing and finishing.*
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-whatido.svg">
