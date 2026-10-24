@@ -9,9 +9,9 @@
 <div align="center">
 
 <a href="mailto:cyp_95@foxmail.com"><img src="https://img.shields.io/badge/Open_to_Work-AI_Agent_%2F_Full--Stack-22c55e?style=for-the-badge&labelColor=0b1220" alt="Open to work"></a>
-<a href="https://www.npmjs.com/package/dsh-mcp-skills-board"><img src="https://img.shields.io/npm/v/dsh-mcp-skills-board?style=for-the-badge&label=npm&labelColor=0b1220&color=22d3ee&logo=npm&logoColor=ffffff" alt="npm version"></a>
-<img src="https://img.shields.io/badge/license-MIT-a78bfa?style=for-the-badge&labelColor=0b1220" alt="MIT">
-<img src="https://img.shields.io/badge/AI_AGENT-RAG_%C2%B7_MCP-67e8f9?style=for-the-badge&labelColor=0b1220" alt="AI Agent · RAG · MCP">
+<a href="https://www.npmjs.com/package/dsh-mcp-skills-board"><img src="https://img.shields.io/npm/v/dsh-mcp-skills-board?style=for-the-badge&label=skills-board&labelColor=0b1220&color=22d3ee&logo=npm&logoColor=ffffff" alt="npm · dsh-mcp-skills-board"></a>
+<a href="https://www.npmjs.com/package/dsh-agent-blackbox"><img src="https://img.shields.io/npm/v/dsh-agent-blackbox?style=for-the-badge&label=blackbox&labelColor=0b1220&color=a78bfa&logo=npm&logoColor=ffffff" alt="npm · dsh-agent-blackbox"></a>
+<img src="https://img.shields.io/badge/license-MIT-f472b6?style=for-the-badge&labelColor=0b1220" alt="MIT">
 
 </div>
 
@@ -59,7 +59,7 @@
     <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-dsh-mcp-skills-board.svg" alt="dsh-mcp-skills-board" width="100%">
   </picture></a>
 
-<sub>公开的原创开源都在这里，其它还在打磨中，做完再放上来 · More open source coming.</sub>
+<sub>另有配套 DSH 插件 <a href="https://github.com/JasperPengC/dsh-agent-blackbox">dsh-agent-blackbox</a>（npm 已发布）· 其它开源还在打磨中。</sub>
 
 <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-stack.svg">
@@ -87,10 +87,11 @@
 
 <p align="center">
   <a href="https://github.com/JasperPengC"><img src="https://img.shields.io/badge/GitHub-JasperPengC-181717?style=for-the-badge&logo=github&logoColor=white&labelColor=0b1220" alt="GitHub"></a>
-  <a href="https://www.npmjs.com/package/dsh-mcp-skills-board"><img src="https://img.shields.io/badge/npm-dsh--mcp--skills--board-cb3837?style=for-the-badge&logo=npm&logoColor=white&labelColor=0b1220" alt="npm"></a>
+  <a href="https://www.npmjs.com/package/dsh-mcp-skills-board"><img src="https://img.shields.io/badge/npm-dsh--mcp--skills--board-cb3837?style=for-the-badge&logo=npm&logoColor=white&labelColor=0b1220" alt="npm · dsh-mcp-skills-board"></a>
+  <a href="https://www.npmjs.com/package/dsh-agent-blackbox"><img src="https://img.shields.io/badge/npm-dsh--agent--blackbox-cb3837?style=for-the-badge&logo=npm&logoColor=white&labelColor=0b1220" alt="npm · dsh-agent-blackbox"></a>
 </p>
 
-<p align="center"><sub>📮 <a href="mailto:cyp_95@foxmail.com">cyp_95@foxmail.com</a> ｜ 想聊 AI Agent / MCP / RAG，或是有合适的机会，欢迎来信，简历可邮件索取。</sub></p>
+<p align="center"><sub>📮 <a href="mailto:cyp_95@foxmail.com">cyp_95@foxmail.com</a> ｜ 想聊技术或产品，或是有合适的机会，欢迎来信，简历可邮件索取。</sub></p>
 
 <div align="center">
   <picture>

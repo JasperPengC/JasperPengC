@@ -764,7 +764,7 @@ def footer() -> str:
   <path class="flow" d="M56 22 H1160" stroke="url(#fl)" stroke-width="1.2" stroke-dasharray="10 22"/>
   <text x="{cx:.0f}" y="62" font-family="{FONT_MONO}" font-size="12" letter-spacing="3.4" fill="#cbd5e1" text-anchor="middle">{esc(title)}</text>
   <rect x="{cx + tw / 2 + 8:.1f}" y="51" width="6" height="14" rx="1.5" fill="#67e8f9" class="cur"/>
-  <text x="{cx:.0f}" y="86" font-family="{FONT_MONO}" font-size="9" letter-spacing="2.2" fill="#8fa0b8" text-anchor="middle">AI APPLICATION &amp; AGENT ENGINEER · 2026</text>
+  <text x="{cx:.0f}" y="86" font-family="{FONT_MONO}" font-size="9" letter-spacing="2.2" fill="#8fa0b8" text-anchor="middle">FULL-STACK · AI APPLICATIONS · 2026</text>
   <text x="48" y="110" font-family="{FONT_MONO}" font-size="9" letter-spacing="1.4" fill="#7c8aa5">© 2026 JASPER</text>
   <text x="1140" y="110" font-family="{FONT_MONO}" font-size="9" letter-spacing="1.4" fill="#7c8aa5" text-anchor="end">EOF // SIGNAL ENDS</text>
   <g fill="#67e8f9">
@@ -794,7 +794,7 @@ def main() -> None:
             cn="AI 编程 agent 的飞行记录仪：本地优先，回放、归因与对比多 runtime 会话。",
             en="Flight recorder for AI coding agents — local-first replay, attribution and diff.",
             chips=[("REPLAY", "#67e8f9"), ("COST", "#4ade80"), ("COMPARE", "#f472b6"), ("LOCAL-FIRST", "#fb923c")],
-            meta="TypeScript · MIT · Node ≥ 22.19 · 零运行时依赖",
+            meta="TypeScript · MIT · Node ≥ 22.19 · DSH 插件已上 npm",
             cmd1="npm install",
             cmd2="npm run demo:ui",
             status="local-first",
