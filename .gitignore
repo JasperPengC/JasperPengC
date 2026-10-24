@@ -6,3 +6,6 @@ light_sheet.html
 tools/preview.py
 *.log
 .DS_Store
+
+# local verification screenshots
+live-*.png
