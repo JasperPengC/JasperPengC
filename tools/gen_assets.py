@@ -214,14 +214,14 @@ def hero_defs() -> str:
     <filter id="soft2" x="-60%" y="-60%" width="220%" height="220%">
       <feGaussianBlur stdDeviation="14"/>
     </filter>
-    <clipPath id="cardClip"><rect width="1200" height="340" rx="20"/></clipPath>
-    <clipPath id="globeClip"><circle cx="985" cy="150" r="74"/></clipPath>
+    <clipPath id="cardClip"><rect width="1200" height="420" rx="20"/></clipPath>
+    <clipPath id="globeClip"><circle cx="985" cy="175" r="80"/></clipPath>
   </defs>"""
 
 
 def hero() -> str:
     rnd = random.Random(20261024)
-    w, h = 1200, 340
+    w, h = 1200, 420
 
     stars = []
     for _ in range(92):
@@ -239,15 +239,15 @@ def hero() -> str:
 
     # four-point sparkles
     sparkles = []
-    for cx, cy, s, dur, delay in [
-        (232, 74, 6.5, 5.2, -1.1),
-        (1180, 248, 5.2, 4.4, -3.2),
-        (806, 58, 4.4, 6.1, -0.4),
-        (140, 268, 4.0, 5.6, -2.7),
+    for cx, cy, s_, dur, delay in [
+        (232, 84, 7.0, 5.2, -1.1),
+        (1180, 300, 5.6, 4.4, -3.2),
+        (806, 64, 4.8, 6.1, -0.4),
+        (140, 330, 4.4, 5.6, -2.7),
     ]:
         sparkles.append(
-            f'<path d="M{cx} {cy - s} Q{cx} {cy} {cx + s} {cy} Q{cx} {cy} {cx} {cy + s} '
-            f'Q{cx} {cy} {cx - s} {cy} Q{cx} {cy} {cx} {cy - s}Z" fill="#cffafe" '
+            f'<path d="M{cx} {cy - s_} Q{cx} {cy} {cx + s_} {cy} Q{cx} {cy} {cx} {cy + s_} '
+            f'Q{cx} {cy} {cx - s_} {cy} Q{cx} {cy} {cx} {cy - s_}Z" fill="#cffafe" '
             f'opacity=".75" style="animation:twinkle {dur:.1f}s ease-in-out {delay:.1f}s infinite"/>'
         )
 
@@ -256,12 +256,12 @@ def hero() -> str:
     chip_colors = ["#f89820", "#facc15", CYAN, "#fb923c", "#3b82f6"]
     x = 74
     for label, color in zip(chip_labels, chip_colors):
-        width = 8.4 * len(label) + 22
+        width = 9.0 * len(label) + 26
         chips.append(
-            f'<g><rect x="{x:.0f}" y="296" width="{width:.0f}" height="26" rx="7" '
+            f'<g><rect x="{x:.0f}" y="360" width="{width:.0f}" height="32" rx="9" '
             f'fill="#0a1224" stroke="#1e3a5f" stroke-opacity=".9"/>'
-            f'<circle cx="{x + 12:.0f}" cy="309" r="2.6" fill="{color}"/>'
-            f'<text x="{x + 21:.0f}" y="313.5" font-family="{FONT_MONO}" font-size="10.5" '
+            f'<circle cx="{x + 14:.0f}" cy="376" r="3.2" fill="{color}"/>'
+            f'<text x="{x + 24:.0f}" y="381" font-family="{FONT_MONO}" font-size="13" '
             f'letter-spacing="1.4" fill="#cbd5e1">{label}</text></g>'
         )
         x += width + 10
@@ -269,22 +269,22 @@ def hero() -> str:
     bars = []
     bx = 862
     for i in range(18):
-        bh = 7 + (math.sin(i * 0.9) * 0.5 + rnd.random() * 0.6) * 24
+        bh = 10 + (math.sin(i * 0.9) * 0.5 + rnd.random() * 0.6) * 30
         delay = -rnd.uniform(0, 2.4)
         dur = rnd.uniform(1.4, 2.6)
         bars.append(
-            f'<rect x="{bx + i * 14.5:.1f}" y="{302 - bh:.1f}" width="5.5" height="{bh:.1f}" rx="2.6" '
+            f'<rect x="{bx + i * 14.5:.1f}" y="{352 - bh:.1f}" width="6.5" height="{bh:.1f}" rx="3" '
             f'fill="url(#barFill)" opacity=".85" '
             f'style="transform-box:fill-box;transform-origin:50% 100%;animation:eq {dur:.2f}s ease-in-out {delay:.2f}s infinite"/>'
         )
 
-    body = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="heroTitle heroDesc">
+    body = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="heroTitle heroDesc">
   <title id="heroTitle">Jasper — AI Agent Tooling · DeepSeek Harness Ecosystem</title>
   <desc id="heroDesc">Neon deep-space banner: JASPER, AI agent tooling, DSH ecosystem, open source.</desc>
 {hero_defs()}
   <style>
     @keyframes twinkle {{ 0%,100% {{ opacity:.14 }} 50% {{ opacity:.95 }} }}
-    @keyframes sweep {{ 0% {{ transform:translateY(-140px) }} 100% {{ transform:translateY(380px) }} }}
+    @keyframes sweep {{ 0% {{ transform:translateY(-160px) }} 100% {{ transform:translateY(460px) }} }}
     @keyframes shoot {{
       0%,64% {{ opacity:0; transform:translate(0,0) }}
       68% {{ opacity:.95; transform:translate(-44px,26px) }}
@@ -299,98 +299,97 @@ def hero() -> str:
     .cursor {{ animation:blink 1.15s steps(1,end) infinite }}
   </style>
   <g clip-path="url(#cardClip)">
-    <rect width="1200" height="340" fill="url(#bgFill)"/>
-    <rect width="1200" height="340" fill="url(#auroraCyan)"/>
-    <rect width="1200" height="340" fill="url(#auroraViolet)"/>
-    <rect width="1200" height="340" fill="url(#auroraPink)"/>
-    <rect width="1200" height="340" fill="url(#grid)" opacity=".55"/>
+    <rect width="1200" height="420" fill="url(#bgFill)"/>
+    <rect width="1200" height="420" fill="url(#auroraCyan)"/>
+    <rect width="1200" height="420" fill="url(#auroraViolet)"/>
+    <rect width="1200" height="420" fill="url(#auroraPink)"/>
+    <rect width="1200" height="420" fill="url(#grid)" opacity=".55"/>
     {''.join(stars)}
     {''.join(sparkles)}
 
     <!-- hologram globe -->
-    <circle cx="985" cy="150" r="182" fill="url(#orbHalo)"/>
+    <circle cx="985" cy="175" r="196" fill="url(#orbHalo)"/>
     <g clip-path="url(#globeClip)">
-      <circle cx="985" cy="150" r="74" fill="url(#orbFill)"/>
+      <circle cx="985" cy="175" r="80" fill="url(#orbFill)"/>
       <g fill="none" stroke="{CYAN}" stroke-opacity=".22" stroke-width=".8">
-        <ellipse cx="985" cy="150" rx="74" ry="24"/>
-        <ellipse cx="985" cy="150" rx="74" ry="49"/>
-        <ellipse cx="985" cy="150" rx="74" ry="73"/>
-        <ellipse cx="985" cy="150" rx="24" ry="74"/>
-        <ellipse cx="985" cy="150" rx="49" ry="74"/>
-        <ellipse cx="985" cy="150" rx="73" ry="74"/>
+        <ellipse cx="985" cy="175" rx="80" ry="26"/>
+        <ellipse cx="985" cy="175" rx="80" ry="53"/>
+        <ellipse cx="985" cy="175" rx="80" ry="79"/>
+        <ellipse cx="985" cy="175" rx="26" ry="80"/>
+        <ellipse cx="985" cy="175" rx="53" ry="80"/>
+        <ellipse cx="985" cy="175" rx="79" ry="80"/>
       </g>
-      <circle cx="985" cy="150" r="74" fill="none" stroke="{SKY}" stroke-opacity=".5" stroke-width="1.1"/>
+      <circle cx="985" cy="175" r="80" fill="none" stroke="{SKY}" stroke-opacity=".5" stroke-width="1.1"/>
     </g>
-    <g transform="rotate(-18 985 150)">
-      <ellipse cx="985" cy="150" rx="126" ry="38" fill="none" stroke="url(#ringFill)" stroke-width="1.3" stroke-dasharray="5 9"/>
-      <ellipse cx="985" cy="150" rx="107" ry="30" fill="none" stroke="url(#ringFill)" stroke-width="1" stroke-dasharray="3 7" opacity=".8"/>
-      <ellipse cx="985" cy="150" rx="88" ry="22" fill="none" stroke="url(#ringFill)" stroke-width=".9" stroke-dasharray="2 6" opacity=".65"/>
+    <g transform="rotate(-18 985 175)">
+      <ellipse cx="985" cy="175" rx="136" ry="41" fill="none" stroke="url(#ringFill)" stroke-width="1.3" stroke-dasharray="5 9"/>
+      <ellipse cx="985" cy="175" rx="116" ry="35" fill="none" stroke="url(#ringFill)" stroke-width="1" stroke-dasharray="3 7" opacity=".8"/>
+      <ellipse cx="985" cy="175" rx="95" ry="24" fill="none" stroke="url(#ringFill)" stroke-width=".9" stroke-dasharray="2 6" opacity=".65"/>
       <circle r="3.4" fill="#e0f2fe">
-        <animateMotion dur="13s" repeatCount="indefinite" path="M859,150 a126,38 0 1,1 252,0 a126,38 0 1,1 -252,0"/>
+        <animateMotion dur="13s" repeatCount="indefinite" path="M849,175 a136,41 0 1,1 272,0 a136,41 0 1,1 -272,0"/>
       </circle>
       <circle r="9" fill="{CYAN}" opacity=".16">
-        <animateMotion dur="13s" repeatCount="indefinite" path="M859,150 a126,38 0 1,1 252,0 a126,38 0 1,1 -252,0"/>
+        <animateMotion dur="13s" repeatCount="indefinite" path="M849,175 a136,41 0 1,1 272,0 a136,41 0 1,1 -272,0"/>
       </circle>
       <circle r="2.4" fill="{PINK}">
-        <animateMotion dur="19s" repeatCount="indefinite" path="M878,150 a107,30 0 1,1 214,0 a107,30 0 1,1 -214,0" keyPoints="1;0" keyTimes="0;1" calcMode="linear"/>
+        <animateMotion dur="19s" repeatCount="indefinite" path="M869,175 a116,35 0 1,1 232,0 a116,35 0 1,1 -232,0" keyPoints="1;0" keyTimes="0;1" calcMode="linear"/>
       </circle>
     </g>
-    <circle cx="985" cy="150" r="112" fill="none" stroke="{VIOLET}" stroke-opacity=".16" stroke-width=".8" stroke-dasharray="2 12"/>
-    <circle cx="985" cy="150" r="112" fill="none" stroke="{SKY}" stroke-opacity=".08" stroke-width="8" class="pulse"/>
+    <circle cx="985" cy="175" r="120" fill="none" stroke="{VIOLET}" stroke-opacity=".16" stroke-width=".8" stroke-dasharray="2 12"/>
+    <circle cx="985" cy="175" r="120" fill="none" stroke="{SKY}" stroke-opacity=".08" stroke-width="8" class="pulse"/>
 
     <!-- terminal headline block -->
-    <rect x="56" y="82" width="2.2" height="218" rx="1.1" fill="url(#edgeFill)"/>
-    <rect x="52.6" y="82" width="9" height="9" rx="2" fill="{TEAL}" opacity=".9" style="animation:blink 2.4s steps(1,end) infinite"/>
-    <rect x="52.6" y="291" width="9" height="9" rx="2" fill="{VIOLET}" opacity=".75"/>
-    <text x="80" y="100" font-family="{FONT_MONO}" font-size="11.5" letter-spacing="3.2" fill="{CYAN}" opacity=".72">// PROFILE.SYS · AI APPLICATION ENGINEER</text>
-    <text x="72" y="192" font-family="{FONT_SANS}" font-size="88" font-weight="800" letter-spacing="7" fill="{CYAN}" opacity=".5" filter="url(#soft2)">JASPER</text>
-    <text x="72" y="192" font-family="{FONT_SANS}" font-size="88" font-weight="800" letter-spacing="7" fill="url(#titleFill)">JASPER</text>
-    <path d="M75 215 H336" stroke="url(#lineFill)" stroke-width="1.6"/>
-    <rect x="334" y="210.5" width="9" height="9" rx="2" transform="rotate(45 338.5 215)" fill="{CYAN}" opacity=".85"/>
-    <text x="75" y="249" font-family="{FONT_MONO}" font-size="17" letter-spacing=".6" fill="#a5f3fc"><tspan fill="{VIOLET}">&gt;</tspan> AI APPLICATION &amp; AGENT ENGINEER</text>
-    <text x="76" y="277" font-family="{FONT_SANS}" font-size="15.5" letter-spacing=".4" fill="{SLATE}">AI 应用 / 智能体 · 资深全栈 · 把想法做成能上线的产品</text>
+    <rect x="56" y="82" width="2.2" height="300" rx="1.1" fill="url(#edgeFill)"/>
+    <rect x="52.6" y="82" width="10" height="10" rx="2" fill="{TEAL}" opacity=".9" style="animation:blink 2.4s steps(1,end) infinite"/>
+    <rect x="52.6" y="372" width="10" height="10" rx="2" fill="{VIOLET}" opacity=".75"/>
+    <text x="80" y="108" font-family="{FONT_MONO}" font-size="14" letter-spacing="3.0" fill="{CYAN}" opacity=".72">// PROFILE.SYS · AI APPLICATION ENGINEER</text>
+    <text x="72" y="214" font-family="{FONT_SANS}" font-size="96" font-weight="800" letter-spacing="7" fill="{CYAN}" opacity=".5" filter="url(#soft2)">JASPER</text>
+    <text x="72" y="214" font-family="{FONT_SANS}" font-size="96" font-weight="800" letter-spacing="7" fill="url(#titleFill)">JASPER</text>
+    <path d="M75 240 H360" stroke="url(#lineFill)" stroke-width="1.8"/>
+    <rect x="356" y="235.5" width="10" height="10" rx="2" transform="rotate(45 361 240.5)" fill="{CYAN}" opacity=".85"/>
+    <text x="75" y="280" font-family="{FONT_MONO}" font-size="20" letter-spacing=".6" fill="#a5f3fc"><tspan fill="{VIOLET}">&gt;</tspan> AI APPLICATION &amp; AGENT ENGINEER</text>
+    <text x="76" y="314" font-family="{FONT_SANS}" font-size="18" letter-spacing=".4" fill="{SLATE}">AI 应用 / 智能体 · 资深全栈</text>
+    <text x="76" y="344" font-family="{FONT_SANS}" font-size="18" letter-spacing=".4" fill="{SLATE}">把想法做成能上线的产品</text>
     {''.join(chips)}
     <g opacity=".92">
-      <text x="600" y="118" font-family="{FONT_MONO}" font-size="10" letter-spacing="2.4" fill="{MUTED}">$ cat .now</text>
-      <text x="580" y="145" font-family="{FONT_MONO}" font-size="12.5" fill="#7c8aa5">├─ <tspan fill="#bae6fd">agent-blackbox</tspan> <tspan fill="#475569">(MIT)</tspan></text>
-      <text x="580" y="168" font-family="{FONT_MONO}" font-size="12.5" fill="#7c8aa5">├─ <tspan fill="#c4b5fd">dsh-mcp-skills-board</tspan> <tspan fill="#475569">(MIT)</tspan></text>
-      <text x="580" y="191" font-family="{FONT_MONO}" font-size="12.5" fill="#7c8aa5">└─ <tspan fill="#f9a8d4">open to AI Agent roles</tspan></text>
-      <text x="580" y="214" font-family="{FONT_MONO}" font-size="12.5" fill="{SLATE}"><tspan fill="{GREEN}">●</tspan> keep building.</text>
+      <text x="600" y="120" font-family="{FONT_MONO}" font-size="13" letter-spacing="2.2" fill="{MUTED}">$ cat .now</text>
+      <text x="580" y="156" font-family="{FONT_MONO}" font-size="15.5" fill="#7c8aa5">├─ <tspan fill="#bae6fd">agent-blackbox</tspan> <tspan fill="#475569">(MIT)</tspan></text>
+      <text x="580" y="186" font-family="{FONT_MONO}" font-size="15.5" fill="#7c8aa5">├─ <tspan fill="#c4b5fd">dsh-mcp-skills-board</tspan> <tspan fill="#475569">(MIT)</tspan></text>
+      <text x="580" y="216" font-family="{FONT_MONO}" font-size="15.5" fill="#7c8aa5">└─ <tspan fill="#f9a8d4">open to AI Agent roles</tspan></text>
+      <text x="580" y="246" font-family="{FONT_MONO}" font-size="15.5" fill="{SLATE}"><tspan fill="{GREEN}">●</tspan> keep building.</text>
     </g>
-    <rect x="866" y="292" width="5.5" height="1.6" fill="#0b1220"/>
 
     <!-- equalizer + labels -->
-    <text x="862" y="268" font-family="{FONT_MONO}" font-size="10" letter-spacing="2.6" fill="{MUTED}">SIGNAL // AGENTS</text>
-    <path d="M862 302 H1128" stroke="{SKY}" stroke-opacity=".18" stroke-width="1"/>
+    <text x="862" y="300" font-family="{FONT_MONO}" font-size="13.5" letter-spacing="2.4" fill="{MUTED}">SIGNAL // AGENTS</text>
+    <path d="M862 352 H1128" stroke="{SKY}" stroke-opacity=".18" stroke-width="1"/>
     {''.join(bars)}
 
     <!-- HUD status -->
     <g>
-      <circle cx="925" cy="52" r="3.1" fill="{GREEN}"/>
-      <circle cx="925" cy="52" r="7.5" fill="{GREEN}" opacity=".16" class="pulse"/>
-      <text x="1128" y="56" font-family="{FONT_MONO}" font-size="10.5" letter-spacing="2.2" fill="#86efac" text-anchor="end">OPEN TO WORK · AI AGENT</text>
+      <circle cx="894" cy="54" r="3.6" fill="{GREEN}"/>
+      <circle cx="894" cy="54" r="8.5" fill="{GREEN}" opacity=".16" class="pulse"/>
+      <text x="1128" y="59" font-family="{FONT_MONO}" font-size="14" letter-spacing="2.2" fill="#86efac" text-anchor="end">OPEN TO WORK · AI AGENT</text>
     </g>
 
     <!-- corner brackets -->
-    <g stroke="{SKY}" stroke-opacity=".32" stroke-width="1.2" fill="none">
+    <g stroke="{SKY}" stroke-opacity=".32" stroke-width="1.4" fill="none">
       <path d="M28 44 V28 H44"/>
-      <path d="M1152 314 H1172 V294"/>
+      <path d="M1152 396 H1172 V376"/>
     </g>
 
     <!-- CRT / vignette / sweep -->
-    <rect width="1200" height="340" fill="url(#scan)"/>
-    <rect width="1200" height="340" fill="url(#vignette)"/>
-    <rect x="0" y="0" width="1200" height="130" fill="url(#sweepFill)" opacity=".1" style="animation:sweep 9s linear infinite"/>
-    <g transform="translate(1082 34) rotate(32)" style="animation:shoot 9s ease-in infinite">
+    <rect width="1200" height="420" fill="url(#scan)"/>
+    <rect width="1200" height="420" fill="url(#vignette)"/>
+    <rect x="0" y="0" width="1200" height="150" fill="url(#sweepFill)" opacity=".1" style="animation:sweep 9s linear infinite"/>
+    <g transform="translate(1082 40) rotate(32)" style="animation:shoot 9s ease-in infinite">
       <path d="M0 0 L-170 92" stroke="{CYAN}" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
       <path d="M0 0 L-74 40" stroke="#f0f9ff" stroke-width="2.4" stroke-linecap="round"/>
     </g>
   </g>
-  <rect x=".75" y=".75" width="1198.5" height="338.5" rx="20" fill="none" stroke="url(#borderFill)" stroke-width="1.5"/>
+  <rect x=".75" y=".75" width="1198.5" height="418.5" rx="20" fill="none" stroke="url(#borderFill)" stroke-width="1.5"/>
 </svg>
 """
-    very_long = body
-    return very_long
+    return body
 
 
 # --------------------------------------------------------------------------
@@ -473,32 +472,32 @@ def corner_brackets(W: int, H: int, pad: int = 28, size: int = 16, color: str = 
 
 def divider(idx: str, en: str, zh: str) -> str:
     w = 1200
-    en_size, en_ls = 13, 2.2
-    zh_size = 13
-    idx_size = 11
-    idx_w = mono_w(f"[ {idx} ]", idx_size, 1.6)
+    en_size, en_ls = 16.5, 2.0
+    zh_size = 16.5
+    idx_size = 14.5
+    idx_w = mono_w(f"[ {idx} ]", idx_size, 1.4)
     en_w = mono_w(en, en_size, en_ls)
     zh_w = sans_w(zh, zh_size)
-    pill_w = 18 + idx_w + 14 + en_w + 14 + zh_w + 20
-    py, ph = 4, 42
-    line_x = pill_w + 20
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="50" viewBox="0 0 {w} 50" role="img" aria-label="{esc(en)} · {esc(zh)}">
+    pill_w = 20 + idx_w + 14 + en_w + 14 + zh_w + 22
+    py, ph = 4, 52
+    line_x = pill_w + 22
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{w}" height="62" viewBox="0 0 {w} 62" role="img" aria-label="{esc(en)} · {esc(zh)}">
 {panel_defs()}
-  <rect x="0" y="{py}" width="{pill_w:.0f}" height="{ph}" rx="10" fill="#070b14" stroke="#1e293b" stroke-opacity=".9"/>
-  <rect x="0.75" y="{py}.75" width="{w - 1.5 if False else pill_w - 1.5:.0f}" height="{ph - 1.5}" rx="9" fill="none" stroke="url(#pBorder)" stroke-opacity=".35"/>
-  <rect x="0" y="{py + 9}" width="3" height="{ph - 18}" rx="1.5" fill="url(#pAccent)"/>
-  <text x="18" y="{py + 25}" font-family="{FONT_MONO}" font-size="{idx_size}" letter-spacing="1.6" fill="#475569">[ {idx} ]</text>
-  <text x="{18 + idx_w + 14:.1f}" y="{py + 26}" font-family="{FONT_MONO}" font-size="{en_size}" letter-spacing="{en_ls}" fill="#e2e8f0">{esc(en)}</text>
-  <text x="{18 + idx_w + 14 + en_w + 14:.1f}" y="{py + 26}" font-family="{FONT_SANS}" font-size="{zh_size}" fill="#94a3b8">{esc(zh)}</text>
+  <rect x="0" y="{py}" width="{pill_w:.0f}" height="{ph}" rx="12" fill="#070b14" stroke="#1e293b" stroke-opacity=".9"/>
+  <rect x="0.75" y="{py}.75" width="{pill_w - 1.5:.0f}" height="{ph - 1.5}" rx="11" fill="none" stroke="url(#pBorder)" stroke-opacity=".35"/>
+  <rect x="0" y="{py + 12}" width="3" height="{ph - 24}" rx="1.5" fill="url(#pAccent)"/>
+  <text x="20" y="{py + 33}" font-family="{FONT_MONO}" font-size="{idx_size}" letter-spacing="1.4" fill="#475569">[ {idx} ]</text>
+  <text x="{20 + idx_w + 14:.1f}" y="{py + 34}" font-family="{FONT_MONO}" font-size="{en_size}" letter-spacing="{en_ls}" fill="#e2e8f0">{esc(en)}</text>
+  <text x="{20 + idx_w + 14 + en_w + 14:.1f}" y="{py + 34}" font-family="{FONT_SANS}" font-size="{zh_size}" fill="#94a3b8">{esc(zh)}</text>
   <defs>
-    <linearGradient id="dl" x1="{line_x + 10:.0f}" y1="0" x2="1188" y2="0" gradientUnits="userSpaceOnUse">
+    <linearGradient id="dl" x1="{line_x + 12:.0f}" y1="0" x2="1188" y2="0" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#22d3ee" stop-opacity=".55"/>
       <stop offset=".45" stop-color="#a78bfa" stop-opacity=".22"/>
       <stop offset="1" stop-color="#a78bfa" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <path d="M{line_x + 10:.0f} {py + 24} H1188" stroke="url(#dl)" stroke-width="1.4"/>
-  <rect x="{line_x + 1:.0f}" y="{py + 21}" width="6" height="6" rx="1.5" transform="rotate(45 {line_x + 4:.0f} {py + 24})" fill="#22d3ee" opacity=".7"/>
+  <path d="M{line_x + 12:.0f} {py + 30} H1188" stroke="url(#dl)" stroke-width="1.6"/>
+  <rect x="{line_x + 1:.0f}" y="{py + 26.5}" width="7" height="7" rx="1.6" transform="rotate(45 {line_x + 4.5:.0f} {py + 30})" fill="#22d3ee" opacity=".7"/>
 </svg>
 """
 
@@ -509,7 +508,7 @@ def divider(idx: str, en: str, zh: str) -> str:
 
 
 def stack_marquee() -> str:
-    W, H = 1200, 86
+    W, H = 1200, 104
     skills = [
         # languages
         ("Java", "#f89820"), ("Python", "#facc15"), ("Go", "#22d3ee"),
@@ -532,29 +531,29 @@ def stack_marquee() -> str:
         ("GitLab CI", "#fc6d26"), ("Playwright", "#2dd4bf"), ("Pytest", "#38bdf8"),
     ]
     chips, x = [], 0.0
-    fs = 12.0
+    fs = 15.0
     for label, color in skills:
-        tw = mono_w(label.upper(), fs, 1.1)
-        cw = 12 + 12 + tw + 14
+        tw = mono_w(label.upper(), fs, 1.0)
+        cw = 14 + 12 + tw + 16
         chips.append(
             f'<g transform="translate({x:.1f} 0)">'
-            f'<rect x="0" y="26" width="{cw:.1f}" height="33" rx="9" fill="#0a1224" stroke="#1e3a5f" stroke-opacity=".85"/>'
-            f'<circle cx="16" cy="42.5" r="3.2" fill="{color}" opacity=".95"/>'
-            f'<text x="25" y="46.5" font-family="{FONT_MONO}" font-size="{fs}" letter-spacing="1.1" fill="#cbd5e1">{esc(label.upper())}</text>'
+            f'<rect x="0" y="30" width="{cw:.1f}" height="40" rx="10" fill="#0a1224" stroke="#1e3a5f" stroke-opacity=".85"/>'
+            f'<circle cx="18" cy="50" r="3.8" fill="{color}" opacity=".95"/>'
+            f'<text x="29" y="55.5" font-family="{FONT_MONO}" font-size="{fs}" letter-spacing="1.0" fill="#d7e1ee">{esc(label.upper())}</text>'
             f'</g>'
         )
         x += cw + 12
     total = x
     group = "".join(chips) + f'<g transform="translate({total:.1f} 0)">' + "".join(chips) + "</g>"
     dur = total / 55.0
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="{H}" viewBox="0 0 1200 {H}" role="img" aria-label="Tech stack marquee">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Tech stack marquee">
 {panel_defs()}
   <style>
     @keyframes marq {{ 0% {{ transform:translateX(0) }} 100% {{ transform:translateX(-{total:.1f}px) }} }}
     .mq {{ animation:marq {dur:.1f}s linear infinite; }}
   </style>
   <defs>
-    <clipPath id="mqClip"><rect x="0.75" y="0.75" width="1198.5" height="{H - 1.5}" rx="16"/></clipPath>
+    <clipPath id="mqClip"><rect x="0.75" y="0.75" width="1198.5" height="{H - 1.5}" rx="18"/></clipPath>
     <mask id="fade">
       <linearGradient id="fadeGrad" x1="0" y1="0" x2="1" y2="0">
         <stop offset="0" stop-color="#000"/><stop offset=".09" stop-color="#fff"/>
@@ -568,11 +567,11 @@ def stack_marquee() -> str:
       <stop offset="1" stop-color="#f472b6" stop-opacity=".12"/>
     </linearGradient>
   </defs>
-  <rect x="0.75" y="0.75" width="1198.5" height="{H - 1.5}" rx="16" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".45" stroke-width="1.5"/>
-  {corner_brackets(W, H, pad=22, size=13)}
+  <rect x="0.75" y="0.75" width="1198.5" height="{H - 1.5}" rx="18" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".45" stroke-width="1.5"/>
+  {corner_brackets(W, H, pad=24, size=14)}
   <path d="M24 0.75 H1176" stroke="url(#sl)" stroke-width="1" opacity=".8"/>
   <g clip-path="url(#mqClip)"><g mask="url(#fade)"><g class="mq">{group}</g></g></g>
-  <text x="24" y="72" font-family="{FONT_MONO}" font-size="9.5" letter-spacing="2.4" fill="#475569">STACK// 日常使用的技术栈 · AI 应用 / 全栈 / 图形与基础设施</text>
+  <text x="24" y="90" font-family="{FONT_MONO}" font-size="14" letter-spacing="2.2" fill="#7c8aa5">STACK// 日常使用的技术栈 · AI 应用 / 全栈 / 图形与基础设施</text>
 </svg>
 """
 
@@ -583,7 +582,7 @@ def stack_marquee() -> str:
 
 
 def capability_card() -> str:
-    W, H = 1200, 320
+    W, H = 1200, 360
     cols = [
         ("01", "AI AGENTS", "智能体", "#4ade80",
          ["智能体架构与云端部署", "MCP Server · Skills 工具链", "多 Agent 协作 · 可观测性"]),
@@ -599,26 +598,26 @@ def capability_card() -> str:
     for i, (idx, en, cn, color, rows) in enumerate(cols):
         x = x0 + i * colw
         if i:
-            blocks.append(f'<path d="M{x - 20} 92 V276" stroke="#1e293b" stroke-opacity=".8" stroke-width="1"/>')
+            blocks.append(f'<path d="M{x - 20} 96 V300" stroke="#1e293b" stroke-opacity=".8" stroke-width="1"/>')
         blocks.append(
-            f'<text x="{x}" y="106" font-family="{FONT_MONO}" font-size="10" letter-spacing="2.4" fill="{color}" opacity=".85">{idx}</text>'
-            f'<text x="{x}" y="140" font-family="{FONT_SANS}" font-size="17" font-weight="700" fill="#e6edf7">{cn}</text>'
-            f'<text x="{x}" y="160" font-family="{FONT_MONO}" font-size="9.5" letter-spacing="2.2" fill="#7c8aa5">{en}</text>'
+            f'<text x="{x}" y="112" font-family="{FONT_MONO}" font-size="13" letter-spacing="2.2" fill="{color}" opacity=".85">{idx}</text>'
+            f'<text x="{x}" y="150" font-family="{FONT_SANS}" font-size="21" font-weight="700" fill="#e6edf7">{cn}</text>'
+            f'<text x="{x}" y="172" font-family="{FONT_MONO}" font-size="13.5" letter-spacing="2" fill="#7c8aa5">{en}</text>'
         )
         for j, row in enumerate(rows):
             blocks.append(
-                f'<circle cx="{x + 3}" cy="{192 + j * 27}" r="2.6" fill="{color}" opacity=".85"/>'
-                f'<text x="{x + 14}" y="{195 + j * 27}" font-family="{FONT_SANS}" font-size="12" fill="#b6c2d4">{esc(row)}</text>'
+                f'<circle cx="{x + 3}" cy="{201 + j * 34}" r="2.8" fill="{color}" opacity=".85"/>'
+                f'<text x="{x + 15}" y="{206 + j * 34}" font-family="{FONT_SANS}" font-size="15.5" fill="#b6c2d4">{esc(row)}</text>'
             )
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="What I do: AI agents, RAG, full-stack, graphics">
 {panel_defs()}
   <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="18" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".45" stroke-width="1.5"/>
   {corner_brackets(W, H)}
-  <text x="48" y="46" font-family="{FONT_MONO}" font-size="11" letter-spacing="3.2" fill="#67e8f9" opacity=".8">// WHAT I DO · 能力地图</text>
-  <text x="1152" y="46" font-family="{FONT_MONO}" font-size="9" letter-spacing="1.8" fill="#7c8aa5" text-anchor="end">从架构到上线 · END-TO-END</text>
-  <path d="M48 66 H1152" stroke="#22d3ee" stroke-opacity=".12" stroke-width="1"/>
+  <text x="48" y="48" font-family="{FONT_MONO}" font-size="14" letter-spacing="2.8" fill="#67e8f9" opacity=".8">// WHAT I DO · 能力地图</text>
+  <text x="1152" y="48" font-family="{FONT_MONO}" font-size="13.5" letter-spacing="1.6" fill="#7c8aa5" text-anchor="end">从架构到上线 · END-TO-END</text>
+  <path d="M48 70 H1152" stroke="#22d3ee" stroke-opacity=".12" stroke-width="1"/>
   {''.join(blocks)}
-  <text x="48" y="302" font-family="{FONT_MONO}" font-size="9" letter-spacing="1.4" fill="#8fa0b8">一边交付，一边把工具造得更好用 · DELIVER &amp; BUILD</text>
+  <text x="48" y="330" font-family="{FONT_MONO}" font-size="14" letter-spacing="1.2" fill="#8fa0b8">一边交付，一边把工具造得更好用 · DELIVER &amp; BUILD</text>
 </svg>
 """
 
@@ -629,7 +628,7 @@ def capability_card() -> str:
 
 
 def stack_matrix() -> str:
-    W, H = 1200, 400
+    W, H = 1200, 500
     rows = [
         ("AI 应用", "AI APPLICATION", "#4ade80",
          ["智能体架构", "云端部署", "RAG", "混合检索 + RRF", "LangChain", "LangGraph", "MCP Server"]),
@@ -642,38 +641,38 @@ def stack_matrix() -> str:
         ("图形 & 质量", "GRAPHICS / QA", "#fb923c",
          ["Skia / Skottie", "Metal", "Vulkan", "CUDA", "FFmpeg", "Pytest", "Vitest", "Playwright"]),
     ]
-    fs = 11.5
+    fs = 14.5
     blocks = []
     for ri, (cn, en, color, items) in enumerate(rows):
-        y = 110 + ri * 57
+        y = 120 + ri * 72
         if ri % 2 == 0:
-            blocks.append(f'<rect x="24" y="{y - 31}" width="1152" height="54" rx="10" fill="#0a1224" fill-opacity=".55"/>')
-        blocks.append(f'<rect x="40" y="{y - 22}" width="2.6" height="26" rx="1.3" fill="{color}"/>')
+            blocks.append(f'<rect x="24" y="{y - 36}" width="1152" height="66" rx="12" fill="#0a1224" fill-opacity=".55"/>')
+        blocks.append(f'<rect x="40" y="{y - 26}" width="3" height="32" rx="1.5" fill="{color}"/>')
         blocks.append(
-            f'<text x="56" y="{y - 2}" font-family="{FONT_SANS}" font-size="13.5" font-weight="600" fill="#e6edf7">{esc(cn)}</text>'
-            f'<text x="56" y="{y + 15}" font-family="{FONT_MONO}" font-size="8.5" letter-spacing="1.8" fill="#7c8aa5">{esc(en)}</text>'
+            f'<text x="58" y="{y - 4}" font-family="{FONT_SANS}" font-size="17" font-weight="600" fill="#e6edf7">{esc(cn)}</text>'
+            f'<text x="58" y="{y + 16}" font-family="{FONT_MONO}" font-size="13.5" letter-spacing="1.6" fill="#7c8aa5">{esc(en)}</text>'
         )
-        x = 216.0
+        x = 220.0
         for item in items:
             tw = sans_w(item, fs)
-            cw = 24 + tw + 14
+            cw = 22 + tw + 12
             blocks.append(
                 f'<g transform="translate({x:.1f} 0)">'
-                f'<rect x="0" y="{y - 22}" width="{cw:.1f}" height="26" rx="7" fill="{color}" fill-opacity=".08" stroke="{color}" stroke-opacity=".32"/>'
-                f'<circle cx="12" cy="{y - 9}" r="2.5" fill="{color}" opacity=".9"/>'
-                f'<text x="21" y="{y - 4}" font-family="{FONT_SANS}" font-size="{fs}" fill="#d7e1ee">{esc(item)}</text>'
+                f'<rect x="0" y="{y - 27}" width="{cw:.1f}" height="32" rx="8" fill="{color}" fill-opacity=".08" stroke="{color}" stroke-opacity=".32"/>'
+                f'<circle cx="12" cy="{y - 11}" r="2.8" fill="{color}" opacity=".9"/>'
+                f'<text x="21" y="{y - 5}" font-family="{FONT_SANS}" font-size="{fs}" fill="#d7e1ee">{esc(item)}</text>'
                 f'</g>'
             )
-            x += cw + 8
+            x += cw + 6
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Stack matrix: AI application, backend, frontend, data, graphics">
 {panel_defs()}
   <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="18" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".45" stroke-width="1.5"/>
   {corner_brackets(W, H)}
-  <text x="48" y="46" font-family="{FONT_MONO}" font-size="11" letter-spacing="3.2" fill="#67e8f9" opacity=".8">// STACK MATRIX · 技术栈</text>
-  <text x="1152" y="46" font-family="{FONT_MONO}" font-size="9" letter-spacing="1.8" fill="#7c8aa5" text-anchor="end">日常在用 · BATTLE-TESTED</text>
-  <path d="M48 66 H1152" stroke="#22d3ee" stroke-opacity=".12" stroke-width="1"/>
+  <text x="48" y="48" font-family="{FONT_MONO}" font-size="14" letter-spacing="2.8" fill="#67e8f9" opacity=".8">// STACK MATRIX · 技术栈</text>
+  <text x="1152" y="48" font-family="{FONT_MONO}" font-size="13.5" letter-spacing="1.6" fill="#7c8aa5" text-anchor="end">日常在用 · BATTLE-TESTED</text>
+  <path d="M48 70 H1152" stroke="#22d3ee" stroke-opacity=".12" stroke-width="1"/>
   {''.join(blocks)}
-  <text x="48" y="384" font-family="{FONT_MONO}" font-size="9" letter-spacing="1.4" fill="#8fa0b8">按场景分组 · GROUPED BY SCENARIO</text>
+  <text x="48" y="470" font-family="{FONT_MONO}" font-size="14" letter-spacing="1.2" fill="#8fa0b8">按场景分组 · GROUPED BY SCENARIO</text>
 </svg>
 """
 
@@ -685,20 +684,20 @@ def stack_matrix() -> str:
 
 def featured_repo_card(index: str, name: str, cn: str, en: str, chips, meta: str,
                       cmd1: str, cmd2: str, status: str, status_note: str, aria: str) -> str:
-    W, H = 1200, 264
+    W, H = 1200, 330
     chip_svg, cx = [], 48
     for label, color in chips:
-        cw = 18 + len(label) * 7.4
+        cw = 22 + len(label) * 8.2
         chip_svg.append(
             f'<g transform="translate({cx} 0)">'
-            f'<rect x="0" y="194" width="{cw:.0f}" height="26" rx="7" fill="{color}" fill-opacity=".12" stroke="{color}" stroke-opacity=".45"/>'
-            f'<text x="{cw / 2:.0f}" y="211" font-family="{FONT_MONO}" font-size="9.5" letter-spacing="1.4" fill="{color}" text-anchor="middle">{label}</text>'
+            f'<rect x="0" y="198" width="{cw:.0f}" height="32" rx="8" fill="{color}" fill-opacity=".12" stroke="{color}" stroke-opacity=".45"/>'
+            f'<text x="{cw / 2:.0f}" y="219" font-family="{FONT_MONO}" font-size="13.5" letter-spacing="1.2" fill="{color}" text-anchor="middle">{label}</text>'
             f'</g>'
         )
         cx += cw + 10
-    status_w = mono_w(f"✓ {status}", 11)
-    cursor_x = 762 + status_w + 9
-    note_x = cursor_x + 15
+    status_w = mono_w(f"✓ {status}", 14)
+    cursor_x = 762 + status_w + 10
+    note_x = cursor_x + 16
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{esc(aria)}">
 {panel_defs()}
   <style>
@@ -707,27 +706,27 @@ def featured_repo_card(index: str, name: str, cn: str, en: str, chips, meta: str
   </style>
   <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="18" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".5" stroke-width="1.5"/>
   {corner_brackets(W, H)}
-  <text x="48" y="44" font-family="{FONT_MONO}" font-size="10" letter-spacing="2.6" fill="#8fa0b8">{esc(index)}</text>
-  <text x="48" y="100" font-family="{FONT_SANS}" font-size="34" font-weight="700" fill="#e6edf7" letter-spacing=".2">{esc(name)}</text>
-  <text x="48" y="134" font-family="{FONT_SANS}" font-size="14.5" fill="#cbd5e1">{esc(cn)}</text>
-  <text x="48" y="158" font-family="{FONT_SANS}" font-size="12" fill="#a8b3c7">{esc(en)}</text>
+  <text x="48" y="46" font-family="{FONT_MONO}" font-size="14" letter-spacing="2.4" fill="#8fa0b8">{esc(index)}</text>
+  <text x="48" y="104" font-family="{FONT_SANS}" font-size="36" font-weight="700" fill="#e6edf7" letter-spacing=".2">{esc(name)}</text>
+  <text x="48" y="142" font-family="{FONT_SANS}" font-size="17" fill="#cbd5e1">{esc(cn)}</text>
+  <text x="48" y="168" font-family="{FONT_SANS}" font-size="15" fill="#a8b3c7">{esc(en)}</text>
   {''.join(chip_svg)}
-  <text x="48" y="248" font-family="{FONT_MONO}" font-size="9.5" letter-spacing="1.2" fill="#8fa0b8">{esc(meta)}</text>
-  <text x="1152" y="44" font-family="{FONT_MONO}" font-size="10" letter-spacing="1.4" fill="url(#pText)" text-anchor="end">VIEW ON GITHUB ↗</text>
+  <text x="48" y="272" font-family="{FONT_MONO}" font-size="14" letter-spacing="1" fill="#8fa0b8">{esc(meta)}</text>
+  <text x="1152" y="46" font-family="{FONT_MONO}" font-size="14" letter-spacing="1.2" fill="url(#pText)" text-anchor="end">VIEW ON GITHUB ↗</text>
   <g>
-    <rect x="742" y="84" width="410" height="150" rx="12" fill="#05080f" stroke="#1e3a5f" stroke-opacity=".9"/>
-    <rect x="742" y="84" width="410" height="28" rx="12" fill="#0a1224"/>
-    <circle cx="760" cy="98" r="3.2" fill="#f87171" opacity=".7"/>
-    <circle cx="772" cy="98" r="3.2" fill="#fbbf24" opacity=".7"/>
-    <circle cx="784" cy="98" r="3.2" fill="#4ade80" opacity=".7"/>
-    <text x="800" y="102" font-family="{FONT_MONO}" font-size="8.5" letter-spacing="1.2" fill="#7c8aa5">terminal · quick start</text>
-    <text x="762" y="142" font-family="{FONT_MONO}" font-size="11" fill="#7c8aa5">$</text>
-    <text x="778" y="142" font-family="{FONT_MONO}" font-size="11" fill="#cbd5e1">{esc(cmd1)}</text>
-    <text x="762" y="166" font-family="{FONT_MONO}" font-size="11" fill="#7c8aa5">$</text>
-    <text x="778" y="166" font-family="{FONT_MONO}" font-size="11" fill="#67e8f9">{esc(cmd2)}</text>
-    <text x="762" y="198" font-family="{FONT_MONO}" font-size="11" fill="#4ade80">✓ {esc(status)}</text>
-    <rect x="{cursor_x:.0f}" y="186" width="6" height="13" rx="1.5" fill="#67e8f9" class="cur"/>
-    <text x="{note_x:.0f}" y="198" font-family="{FONT_SANS}" font-size="10.5" fill="#8fa0b8">{esc(status_note)}</text>
+    <rect x="742" y="88" width="410" height="200" rx="14" fill="#05080f" stroke="#1e3a5f" stroke-opacity=".9"/>
+    <rect x="742" y="88" width="410" height="32" rx="14" fill="#0a1224"/>
+    <circle cx="762" cy="104" r="3.6" fill="#f87171" opacity=".7"/>
+    <circle cx="776" cy="104" r="3.6" fill="#fbbf24" opacity=".7"/>
+    <circle cx="790" cy="104" r="3.6" fill="#4ade80" opacity=".7"/>
+    <text x="806" y="109" font-family="{FONT_MONO}" font-size="13" letter-spacing="1" fill="#7c8aa5">terminal · quick start</text>
+    <text x="762" y="154" font-family="{FONT_MONO}" font-size="14" fill="#7c8aa5">$</text>
+    <text x="780" y="154" font-family="{FONT_MONO}" font-size="14" fill="#cbd5e1">{esc(cmd1)}</text>
+    <text x="762" y="186" font-family="{FONT_MONO}" font-size="14" fill="#7c8aa5">$</text>
+    <text x="780" y="186" font-family="{FONT_MONO}" font-size="14" fill="#67e8f9">{esc(cmd2)}</text>
+    <text x="762" y="228" font-family="{FONT_MONO}" font-size="14" fill="#4ade80">✓ {esc(status)}</text>
+    <rect x="{cursor_x:.0f}" y="214" width="7" height="16" rx="2" fill="#67e8f9" class="cur"/>
+    <text x="{note_x:.0f}" y="228" font-family="{FONT_SANS}" font-size="14" fill="#8fa0b8">{esc(status_note)}</text>
   </g>
 </svg>
 """
@@ -739,9 +738,9 @@ def featured_repo_card(index: str, name: str, cn: str, en: str, chips, meta: str
 
 
 def footer() -> str:
-    W, H = 1200, 128
+    W, H = 1200, 160
     title = "THANKS FOR VISITING · 感谢到访"
-    tw = mono_w(title, 12, 3.4)
+    tw = mono_w(title, 15, 3.2)
     cx = W / 2
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Thanks for visiting">
 {panel_defs()}
@@ -752,7 +751,7 @@ def footer() -> str:
     .cur {{ animation:blink 1.1s steps(1,end) infinite }}
   </style>
   <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="18" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".45" stroke-width="1.5"/>
-  {corner_brackets(W, H, pad=28, size=14)}
+  {corner_brackets(W, H, pad=28, size=15)}
   <defs>
     <linearGradient id="fl" x1="56" y1="0" x2="1160" y2="0" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#22d3ee" stop-opacity=".05"/>
@@ -761,14 +760,14 @@ def footer() -> str:
       <stop offset="1" stop-color="#f472b6" stop-opacity=".05"/>
     </linearGradient>
   </defs>
-  <path class="flow" d="M56 22 H1160" stroke="url(#fl)" stroke-width="1.2" stroke-dasharray="10 22"/>
-  <text x="{cx:.0f}" y="62" font-family="{FONT_MONO}" font-size="12" letter-spacing="3.4" fill="#cbd5e1" text-anchor="middle">{esc(title)}</text>
-  <rect x="{cx + tw / 2 + 8:.1f}" y="51" width="6" height="14" rx="1.5" fill="#67e8f9" class="cur"/>
-  <text x="{cx:.0f}" y="86" font-family="{FONT_MONO}" font-size="9" letter-spacing="2.2" fill="#8fa0b8" text-anchor="middle">FULL-STACK · AI APPLICATIONS · 2026</text>
-  <text x="48" y="110" font-family="{FONT_MONO}" font-size="9" letter-spacing="1.4" fill="#7c8aa5">© 2026 JASPER</text>
-  <text x="1140" y="110" font-family="{FONT_MONO}" font-size="9" letter-spacing="1.4" fill="#7c8aa5" text-anchor="end">EOF // SIGNAL ENDS</text>
+  <path class="flow" d="M56 26 H1160" stroke="url(#fl)" stroke-width="1.4" stroke-dasharray="10 22"/>
+  <text x="{cx:.0f}" y="78" font-family="{FONT_MONO}" font-size="15" letter-spacing="3.2" fill="#cbd5e1" text-anchor="middle">{esc(title)}</text>
+  <rect x="{cx + tw / 2 + 9:.1f}" y="64" width="7" height="17" rx="2" fill="#67e8f9" class="cur"/>
+  <text x="{cx:.0f}" y="108" font-family="{FONT_MONO}" font-size="14" letter-spacing="2" fill="#8fa0b8" text-anchor="middle">FULL-STACK · AI APPLICATIONS · 2026</text>
+  <text x="48" y="140" font-family="{FONT_MONO}" font-size="14" letter-spacing="1.2" fill="#7c8aa5">© 2026 JASPER</text>
+  <text x="1136" y="140" font-family="{FONT_MONO}" font-size="14" letter-spacing="1.2" fill="#7c8aa5" text-anchor="end">EOF // SIGNAL ENDS</text>
   <g fill="#67e8f9">
-    <circle cx="588" cy="110" r="2" opacity=".35"/><circle cx="600" cy="110" r="2" opacity=".25"/><circle cx="612" cy="110" r="2" opacity=".15"/>
+    <circle cx="588" cy="140" r="2.2" opacity=".35"/><circle cx="600" cy="140" r="2.2" opacity=".25"/><circle cx="612" cy="140" r="2.2" opacity=".15"/>
   </g>
 </svg>
 """
@@ -791,8 +790,8 @@ def main() -> None:
         featured_repo_card(
             index="OPEN SOURCE · 01",
             name="agent-blackbox",
-            cn="AI 编程 agent 的飞行记录仪：本地优先，回放、归因与对比多 runtime 会话。",
-            en="Flight recorder for AI coding agents — local-first replay, attribution and diff.",
+            cn="AI 编程 agent 的飞行记录仪：本地优先，回放、归因、对比。",
+            en="Flight recorder for AI coding agents — replay, attribution, diff.",
             chips=[("REPLAY", "#67e8f9"), ("COST", "#4ade80"), ("COMPARE", "#f472b6"), ("LOCAL-FIRST", "#fb923c")],
             meta="TypeScript · MIT · Node ≥ 22.19 · DSH 插件已上 npm",
             cmd1="npm install",
@@ -808,7 +807,7 @@ def main() -> None:
             index="OPEN SOURCE · 02",
             name="dsh-mcp-skills-board",
             cn="DSH 的 MCP / 技能管理面板：四态开关、MCP 增删改、导入导出与模板。",
-            en="Codex-style MCP & Skills panel for DeepSeek Harness — toggles, templates, import/export.",
+            en="Codex-style MCP & Skills panel for DeepSeek Harness — toggles, templates.",
             chips=[("MCP", "#67e8f9"), ("SKILLS", "#a78bfa"), ("TEMPLATES", "#f472b6"), ("NPM", "#fb923c")],
             meta="JavaScript · MIT · npm 已发布 · DSH 插件",
             cmd1="dsh plugin --profile desktop add",
