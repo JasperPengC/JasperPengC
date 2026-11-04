@@ -214,14 +214,14 @@ def hero_defs() -> str:
     <filter id="soft2" x="-60%" y="-60%" width="220%" height="220%">
       <feGaussianBlur stdDeviation="14"/>
     </filter>
-    <clipPath id="cardClip"><rect width="1200" height="420" rx="20"/></clipPath>
+    <clipPath id="cardClip"><rect width="1200" height="440" rx="20"/></clipPath>
     <clipPath id="globeClip"><circle cx="985" cy="175" r="80"/></clipPath>
   </defs>"""
 
 
 def hero() -> str:
     rnd = random.Random(20261024)
-    w, h = 1200, 420
+    w, h = 1200, 440
 
     stars = []
     for _ in range(92):
@@ -254,14 +254,14 @@ def hero() -> str:
     chips = []
     chip_labels = ["JAVA", "PYTHON", "GO", "RUST", "TYPESCRIPT"]
     chip_colors = ["#f89820", "#facc15", CYAN, "#fb923c", "#3b82f6"]
-    x = 74
+    x = 92
     for label, color in zip(chip_labels, chip_colors):
         width = 9.0 * len(label) + 26
         chips.append(
-            f'<g><rect x="{x:.0f}" y="360" width="{width:.0f}" height="32" rx="9" '
+            f'<g><rect x="{x:.0f}" y="368" width="{width:.0f}" height="32" rx="9" '
             f'fill="#0a1224" stroke="#1e3a5f" stroke-opacity=".9"/>'
-            f'<circle cx="{x + 14:.0f}" cy="376" r="3.2" fill="{color}"/>'
-            f'<text x="{x + 24:.0f}" y="381" font-family="{FONT_MONO}" font-size="13" '
+            f'<circle cx="{x + 14:.0f}" cy="384" r="3.2" fill="{color}"/>'
+            f'<text x="{x + 24:.0f}" y="389" font-family="{FONT_MONO}" font-size="13" '
             f'letter-spacing="1.4" fill="#cbd5e1">{label}</text></g>'
         )
         x += width + 10
@@ -273,12 +273,12 @@ def hero() -> str:
         delay = -rnd.uniform(0, 2.4)
         dur = rnd.uniform(1.4, 2.6)
         bars.append(
-            f'<rect x="{bx + i * 14.5:.1f}" y="{352 - bh:.1f}" width="6.5" height="{bh:.1f}" rx="3" '
+            f'<rect x="{bx + i * 14.5:.1f}" y="{360 - bh:.1f}" width="6.5" height="{bh:.1f}" rx="3" '
             f'fill="url(#barFill)" opacity=".85" '
             f'style="transform-box:fill-box;transform-origin:50% 100%;animation:eq {dur:.2f}s ease-in-out {delay:.2f}s infinite"/>'
         )
 
-    body = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="heroTitle heroDesc">
+    body = f"""<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="440" viewBox="0 0 1200 440" role="img" aria-labelledby="heroTitle heroDesc">
   <title id="heroTitle">Jasper — AI Agent Tooling · DeepSeek Harness Ecosystem</title>
   <desc id="heroDesc">Neon deep-space banner: JASPER, AI agent tooling, DSH ecosystem, open source.</desc>
 {hero_defs()}
@@ -299,11 +299,11 @@ def hero() -> str:
     .cursor {{ animation:blink 1.15s steps(1,end) infinite }}
   </style>
   <g clip-path="url(#cardClip)">
-    <rect width="1200" height="420" fill="url(#bgFill)"/>
-    <rect width="1200" height="420" fill="url(#auroraCyan)"/>
-    <rect width="1200" height="420" fill="url(#auroraViolet)"/>
-    <rect width="1200" height="420" fill="url(#auroraPink)"/>
-    <rect width="1200" height="420" fill="url(#grid)" opacity=".55"/>
+    <rect width="1200" height="440" fill="url(#bgFill)"/>
+    <rect width="1200" height="440" fill="url(#auroraCyan)"/>
+    <rect width="1200" height="440" fill="url(#auroraViolet)"/>
+    <rect width="1200" height="440" fill="url(#auroraPink)"/>
+    <rect width="1200" height="440" fill="url(#grid)" opacity=".55"/>
     {''.join(stars)}
     {''.join(sparkles)}
 
@@ -339,9 +339,9 @@ def hero() -> str:
     <circle cx="985" cy="175" r="120" fill="none" stroke="{SKY}" stroke-opacity=".08" stroke-width="8" class="pulse"/>
 
     <!-- terminal headline block -->
-    <rect x="56" y="82" width="2.2" height="300" rx="1.1" fill="url(#edgeFill)"/>
+    <rect x="56" y="82" width="2.2" height="320" rx="1.1" fill="url(#edgeFill)"/>
     <rect x="52.6" y="82" width="10" height="10" rx="2" fill="{TEAL}" opacity=".9" style="animation:blink 2.4s steps(1,end) infinite"/>
-    <rect x="52.6" y="372" width="10" height="10" rx="2" fill="{VIOLET}" opacity=".75"/>
+    <rect x="52.6" y="392" width="10" height="10" rx="2" fill="{VIOLET}" opacity=".75"/>
     <text x="80" y="108" font-family="{FONT_MONO}" font-size="14" letter-spacing="3.0" fill="{CYAN}" opacity=".72">// PROFILE.SYS · AI APPLICATION ENGINEER</text>
     <text x="72" y="214" font-family="{FONT_SANS}" font-size="96" font-weight="800" letter-spacing="7" fill="{CYAN}" opacity=".5" filter="url(#soft2)">JASPER</text>
     <text x="72" y="214" font-family="{FONT_SANS}" font-size="96" font-weight="800" letter-spacing="7" fill="url(#titleFill)">JASPER</text>
@@ -361,32 +361,32 @@ def hero() -> str:
 
     <!-- equalizer + labels -->
     <text x="862" y="300" font-family="{FONT_MONO}" font-size="13.5" letter-spacing="2.4" fill="{MUTED}">SIGNAL // AGENTS</text>
-    <path d="M862 352 H1128" stroke="{SKY}" stroke-opacity=".18" stroke-width="1"/>
+    <path d="M862 360 H1128" stroke="{SKY}" stroke-opacity=".18" stroke-width="1"/>
     {''.join(bars)}
 
     <!-- HUD status -->
     <g>
-      <circle cx="894" cy="54" r="3.6" fill="{GREEN}"/>
-      <circle cx="894" cy="54" r="8.5" fill="{GREEN}" opacity=".16" class="pulse"/>
+      <circle cx="856" cy="54" r="3.6" fill="{GREEN}"/>
+      <circle cx="856" cy="54" r="8.5" fill="{GREEN}" opacity=".16" class="pulse"/>
       <text x="1128" y="59" font-family="{FONT_MONO}" font-size="14" letter-spacing="2.2" fill="#86efac" text-anchor="end">OPEN TO WORK · AI AGENT</text>
     </g>
 
     <!-- corner brackets -->
     <g stroke="{SKY}" stroke-opacity=".32" stroke-width="1.4" fill="none">
       <path d="M28 44 V28 H44"/>
-      <path d="M1152 396 H1172 V376"/>
+      <path d="M1152 416 H1172 V396"/>
     </g>
 
     <!-- CRT / vignette / sweep -->
-    <rect width="1200" height="420" fill="url(#scan)"/>
-    <rect width="1200" height="420" fill="url(#vignette)"/>
+    <rect width="1200" height="440" fill="url(#scan)"/>
+    <rect width="1200" height="440" fill="url(#vignette)"/>
     <rect x="0" y="0" width="1200" height="150" fill="url(#sweepFill)" opacity=".1" style="animation:sweep 9s linear infinite"/>
     <g transform="translate(1082 40) rotate(32)" style="animation:shoot 9s ease-in infinite">
       <path d="M0 0 L-170 92" stroke="{CYAN}" stroke-width="1.6" stroke-linecap="round" opacity=".85"/>
       <path d="M0 0 L-74 40" stroke="#f0f9ff" stroke-width="2.4" stroke-linecap="round"/>
     </g>
   </g>
-  <rect x=".75" y=".75" width="1198.5" height="418.5" rx="20" fill="none" stroke="url(#borderFill)" stroke-width="1.5"/>
+  <rect x=".75" y=".75" width="1198.5" height="438.5" rx="20" fill="none" stroke="url(#borderFill)" stroke-width="1.5"/>
 </svg>
 """
     return body
