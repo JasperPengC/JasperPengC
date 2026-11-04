@@ -1,8 +1,8 @@
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/hero.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/hero-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/hero.svg" alt="Jasper · AI Application & Agent Engineer" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/hero.svg?v=20251105">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/hero-light.svg?v=20251105">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/hero.svg?v=20251105" alt="Jasper · AI Application & Agent Engineer" width="100%">
   </picture>
 </div>
 
@@ -16,9 +16,9 @@
 </div>
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-about.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-about-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-about.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-about.svg?v=20251105">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-about-light.svg?v=20251105">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-about.svg?v=20251105" alt="" width="100%">
   </picture>
 
 写的东西比较杂，从传统项目一路做到 AI 应用。广是挺广，精就谈不上了，慢慢补吧。
@@ -30,59 +30,59 @@
 *These days AI writes most of the code; I do the nitpicking, fixing and finishing.*
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-whatido.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-whatido-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-whatido.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-whatido.svg?v=20251105">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-whatido-light.svg?v=20251105">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-whatido.svg?v=20251105" alt="" width="100%">
   </picture>
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/capability.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/capability-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/capability.svg" alt="What I do" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/capability.svg?v=20251105">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/capability-light.svg?v=20251105">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/capability.svg?v=20251105" alt="What I do" width="100%">
   </picture>
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-opensource.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-opensource-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-opensource.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-opensource.svg?v=20251105">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-opensource-light.svg?v=20251105">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-opensource.svg?v=20251105" alt="" width="100%">
   </picture>
 
 <a href="https://github.com/JasperPengC/agent-blackbox"><picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-agent-blackbox.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-agent-blackbox-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-agent-blackbox.svg" alt="agent-blackbox" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-agent-blackbox.svg?v=20251105">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-agent-blackbox-light.svg?v=20251105">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-agent-blackbox.svg?v=20251105" alt="agent-blackbox" width="100%">
   </picture></a>
 
 <a href="https://github.com/JasperPengC/dsh-mcp-skills-board"><picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-dsh-mcp-skills-board.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-dsh-mcp-skills-board-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-dsh-mcp-skills-board.svg" alt="dsh-mcp-skills-board" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-dsh-mcp-skills-board.svg?v=20251105">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-dsh-mcp-skills-board-light.svg?v=20251105">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/repo-dsh-mcp-skills-board.svg?v=20251105" alt="dsh-mcp-skills-board" width="100%">
   </picture></a>
 
 <sub>另有配套 DSH 插件 <a href="https://github.com/JasperPengC/dsh-agent-blackbox">dsh-agent-blackbox</a>（npm 已发布）· 其它开源还在打磨中。</sub>
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-stack.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-stack-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-stack.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-stack.svg?v=20251105">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-stack-light.svg?v=20251105">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-stack.svg?v=20251105" alt="" width="100%">
   </picture>
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/stack.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/stack-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/stack.svg" alt="Tech stack marquee" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/stack.svg?v=20251105">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/stack-light.svg?v=20251105">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/stack.svg?v=20251105" alt="Tech stack marquee" width="100%">
   </picture>
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/stack-matrix.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/stack-matrix-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/stack-matrix.svg" alt="Stack matrix" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/stack-matrix.svg?v=20251105">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/stack-matrix-light.svg?v=20251105">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/stack-matrix.svg?v=20251105" alt="Stack matrix" width="100%">
   </picture>
 
 <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-connect.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-connect-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-connect.svg" alt="" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-connect.svg?v=20251105">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-connect-light.svg?v=20251105">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/divider-connect.svg?v=20251105" alt="" width="100%">
   </picture>
 
 <p align="center">
@@ -95,9 +95,9 @@
 
 <div align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/footer.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/footer-light.svg">
-    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/footer.svg" alt="Thanks for visiting" width="100%">
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/footer.svg?v=20251105">
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/footer-light.svg?v=20251105">
+    <img src="https://raw.githubusercontent.com/JasperPengC/JasperPengC/main/assets/footer.svg?v=20251105" alt="Thanks for visiting" width="100%">
   </picture>
 </div>
 
