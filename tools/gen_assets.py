@@ -254,14 +254,14 @@ def hero() -> str:
     chips = []
     chip_labels = ["JAVA", "PYTHON", "GO", "RUST", "TYPESCRIPT"]
     chip_colors = ["#f89820", "#facc15", CYAN, "#fb923c", "#3b82f6"]
-    x = 92
+    x = 74
     for label, color in zip(chip_labels, chip_colors):
-        width = 9.0 * len(label) + 26
+        width = 9.2 * len(label) + 42
         chips.append(
             f'<g><rect x="{x:.0f}" y="368" width="{width:.0f}" height="32" rx="9" '
             f'fill="#0a1224" stroke="#1e3a5f" stroke-opacity=".9"/>'
-            f'<circle cx="{x + 14:.0f}" cy="384" r="3.2" fill="{color}"/>'
-            f'<text x="{x + 24:.0f}" y="389" font-family="{FONT_MONO}" font-size="13" '
+            f'<circle cx="{x + 16:.0f}" cy="384" r="3.2" fill="{color}"/>'
+            f'<text x="{x + 28:.0f}" y="389" font-family="{FONT_MONO}" font-size="13" '
             f'letter-spacing="1.4" fill="#cbd5e1">{label}</text></g>'
         )
         x += width + 10
