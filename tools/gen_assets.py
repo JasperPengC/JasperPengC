@@ -252,8 +252,9 @@ def hero() -> str:
         )
 
     chips = []
-    chip_labels = ["JAVA", "PYTHON", "GO", "RUST", "TYPESCRIPT"]
-    chip_colors = ["#f89820", "#facc15", CYAN, "#fb923c", "#3b82f6"]
+    # chips mirror what the public repos are actually built with
+    chip_labels = ["TYPESCRIPT", "RUST", "TAURI", "MCP", "DOCKER"]
+    chip_colors = ["#3b82f6", "#fb923c", "#fbbf24", CYAN, "#38bdf8"]
     x = 74
     for label, color in zip(chip_labels, chip_colors):
         width = 9.2 * len(label) + 42
@@ -352,11 +353,12 @@ def hero() -> str:
     <text x="76" y="344" font-family="{FONT_SANS}" font-size="18" letter-spacing=".4" fill="{SLATE}">把想法做成能上线的产品</text>
     {''.join(chips)}
     <g opacity=".92">
-      <text x="600" y="120" font-family="{FONT_MONO}" font-size="13" letter-spacing="2.2" fill="{MUTED}">$ cat .now</text>
-      <text x="580" y="156" font-family="{FONT_MONO}" font-size="15.5" fill="#7c8aa5">├─ <tspan fill="#bae6fd">agent-blackbox</tspan> <tspan fill="#475569">(MIT)</tspan></text>
-      <text x="580" y="186" font-family="{FONT_MONO}" font-size="15.5" fill="#7c8aa5">├─ <tspan fill="#c4b5fd">dsh-mcp-skills-board</tspan> <tspan fill="#475569">(MIT)</tspan></text>
-      <text x="580" y="216" font-family="{FONT_MONO}" font-size="15.5" fill="#7c8aa5">└─ <tspan fill="#f9a8d4">open to AI Agent roles</tspan></text>
-      <text x="580" y="246" font-family="{FONT_MONO}" font-size="15.5" fill="{SLATE}"><tspan fill="{GREEN}">●</tspan> keep building.</text>
+      <text x="600" y="118" font-family="{FONT_MONO}" font-size="13" letter-spacing="2.2" fill="{MUTED}">$ cat .focus</text>
+      <text x="580" y="154" font-family="{FONT_MONO}" font-size="15.5" fill="#7c8aa5">├─ <tspan fill="#bae6fd">agents · mcp · rag</tspan></text>
+      <text x="580" y="184" font-family="{FONT_MONO}" font-size="15.5" fill="#7c8aa5">├─ <tspan fill="#a5f3fc">desktop apps · tauri</tspan></text>
+      <text x="580" y="214" font-family="{FONT_MONO}" font-size="15.5" fill="#7c8aa5">├─ <tspan fill="#f9a8d4">h5 games · canvas</tspan></text>
+      <text x="580" y="244" font-family="{FONT_MONO}" font-size="15.5" fill="#7c8aa5">└─ <tspan fill="#c4b5fd">open to AI Agent roles</tspan></text>
+      <text x="580" y="278" font-family="{FONT_MONO}" font-size="15.5" fill="{SLATE}"><tspan fill="{GREEN}">●</tspan> keep building.</text>
     </g>
 
     <!-- equalizer + labels -->
@@ -519,7 +521,7 @@ def stack_marquee() -> str:
         # frontend / client
         ("React", "#61dafb"), ("Next.js", "#e2e8f0"), ("Vue", "#42b883"),
         ("uni-app", "#22d3ee"), ("Electron", "#9feaf9"), ("Tauri", "#ffc131"),
-        ("Tailwind", "#38bdf8"),
+        ("Tailwind", "#38bdf8"), ("Bun", "#94a3b8"), ("Canvas 2D", "#fb923c"),
         # data
         ("PostgreSQL", "#5b8cba"), ("MySQL", "#4a90c2"), ("Redis", "#ff6b5b"),
         ("Qdrant", "#e879f9"),
@@ -585,13 +587,13 @@ def capability_card() -> str:
     W, H = 1200, 360
     cols = [
         ("01", "AI AGENTS", "智能体", "#4ade80",
-         ["智能体架构与云端部署", "MCP Server · Skills 工具链", "多 Agent 协作 · 可观测性"]),
+         ["智能体架构与云端部署", "MCP Server · Skills 工具链", "会话回放 · 归因 · 成本"]),
         ("02", "RAG", "知识库", "#67e8f9",
          ["混合检索 + RRF 重排", "文档处理 / 多租户", "权限与数据隔离"]),
-        ("03", "FULL-STACK", "全栈交付", "#a78bfa",
-         ["Java / Python / Go / Rust", "React / Next.js / Tauri", "架构 · 上线 · 维护"]),
-        ("04", "GRAPHICS", "图形渲染", "#fb923c",
-         ["Rust / GPU 渲染引擎", "音视频与跨语言接入", "性能与稳定性"]),
+        ("03", "FULL-STACK", "全栈 · 客户端", "#a78bfa",
+         ["Java / Python / Go / Rust", "React / Next.js / Tauri", "自托管 · Docker 部署"]),
+        ("04", "GRAPHICS", "图形 · 交互", "#fb923c",
+         ["Rust / GPU 渲染引擎", "Canvas 2D · H5 游戏", "性能与稳定性"]),
     ]
     blocks = []
     x0, colw = 48, 268
@@ -602,22 +604,22 @@ def capability_card() -> str:
         blocks.append(
             f'<text x="{x}" y="112" font-family="{FONT_MONO}" font-size="13" letter-spacing="2.2" fill="{color}" opacity=".85">{idx}</text>'
             f'<text x="{x}" y="150" font-family="{FONT_SANS}" font-size="21" font-weight="700" fill="#e6edf7">{cn}</text>'
-            f'<text x="{x}" y="172" font-family="{FONT_MONO}" font-size="13.5" letter-spacing="2" fill="#7c8aa5">{en}</text>'
+            f'<text x="{x}" y="172" font-family="{FONT_MONO}" font-size="12.5" letter-spacing="2" fill="#7c8aa5">{en}</text>'
         )
         for j, row in enumerate(rows):
             blocks.append(
                 f'<circle cx="{x + 3}" cy="{201 + j * 34}" r="2.8" fill="{color}" opacity=".85"/>'
                 f'<text x="{x + 15}" y="{206 + j * 34}" font-family="{FONT_SANS}" font-size="15.5" fill="#b6c2d4">{esc(row)}</text>'
             )
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="What I do: AI agents, RAG, full-stack, graphics">
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="What I do: AI agents, RAG, full-stack and clients, graphics">
 {panel_defs()}
   <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="18" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".45" stroke-width="1.5"/>
   {corner_brackets(W, H)}
   <text x="48" y="48" font-family="{FONT_MONO}" font-size="14" letter-spacing="2.8" fill="#67e8f9" opacity=".8">// WHAT I DO · 能力地图</text>
-  <text x="1152" y="48" font-family="{FONT_MONO}" font-size="13.5" letter-spacing="1.6" fill="#7c8aa5" text-anchor="end">从架构到上线 · END-TO-END</text>
+  <text x="1152" y="48" font-family="{FONT_MONO}" font-size="12.5" letter-spacing="1.6" fill="#7c8aa5" text-anchor="end">从架构到上线 · END-TO-END</text>
   <path d="M48 70 H1152" stroke="#22d3ee" stroke-opacity=".12" stroke-width="1"/>
   {''.join(blocks)}
-  <text x="48" y="330" font-family="{FONT_MONO}" font-size="14" letter-spacing="1.2" fill="#8fa0b8">一边交付，一边把工具造得更好用 · DELIVER &amp; BUILD</text>
+  <text x="48" y="330" font-family="{FONT_MONO}" font-size="12.5" letter-spacing="1.2" fill="#8fa0b8">一边交付，一边把工具造得更好用 · DELIVER &amp; BUILD</text>
 </svg>
 """
 
@@ -634,10 +636,10 @@ def stack_matrix() -> str:
          ["智能体架构", "云端部署", "RAG", "混合检索 + RRF", "LangChain", "LangGraph", "MCP Server"]),
         ("后端", "BACKEND", "#67e8f9",
          ["Java", "Spring Boot", "Spring Cloud", "Python", "FastAPI", "Go", "Rust", "C#", "Node.js", "Fastify"]),
-        ("前端 / 客户端", "FRONTEND", "#a78bfa",
-         ["React", "Next.js", "Vue", "uni-app", "Electron", "Tauri", "Tailwind CSS"]),
+        ("前端 / 客户端", "FRONTEND / CLIENT", "#a78bfa",
+         ["React", "Next.js", "Vue", "uni-app", "Electron", "Tauri", "Tailwind CSS", "Canvas 2D", "Bun"]),
         ("数据 & 基建", "DATA / INFRA", "#38bdf8",
-         ["PostgreSQL", "MySQL", "Redis", "Qdrant", "Docker", "Linux", "Nginx", "Prometheus", "OpenTelemetry"]),
+         ["PostgreSQL", "MySQL", "Redis", "Qdrant", "Drizzle", "Docker", "Linux", "Nginx", "Prometheus", "OpenTelemetry"]),
         ("图形 & 质量", "GRAPHICS / QA", "#fb923c",
          ["Skia / Skottie", "Metal", "Vulkan", "CUDA", "FFmpeg", "Pytest", "Vitest", "Playwright"]),
     ]
@@ -682,52 +684,28 @@ def stack_matrix() -> str:
 # --------------------------------------------------------------------------
 
 
-def featured_repo_card(index: str, name: str, cn: str, en: str, chips, meta: str,
-                      cmd1: str, cmd2: str, status: str, status_note: str, aria: str) -> str:
-    W, H = 1200, 330
-    chip_svg, cx = [], 48
-    for label, color in chips:
-        cw = 22 + len(label) * 8.2
-        chip_svg.append(
-            f'<g transform="translate({cx} 0)">'
-            f'<rect x="0" y="198" width="{cw:.0f}" height="32" rx="8" fill="{color}" fill-opacity=".12" stroke="{color}" stroke-opacity=".45"/>'
-            f'<text x="{cw / 2:.0f}" y="219" font-family="{FONT_MONO}" font-size="13.5" letter-spacing="1.2" fill="{color}" text-anchor="middle">{label}</text>'
-            f'</g>'
-        )
-        cx += cw + 10
-    status_w = mono_w(f"✓ {status}", 14)
-    cursor_x = 762 + status_w + 10
-    note_x = cursor_x + 16
+def project_card(index: str, name: str, cn: str, en: str, tag: str, tag_color: str,
+                 meta: str, aria: str) -> str:
+    """Compact clickable project card, 2-up grid (584 px wide)."""
+    W, H = 584, 204
+    tag_w = mono_w(tag, 12, 1.3) + 26
+    tag_x = W - 28 - tag_w
+    name_size = 28 if sans_w(name, 28) <= 470 else 24
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="{esc(aria)}">
 {panel_defs()}
-  <style>
-    @keyframes blink {{ 0%,49% {{ opacity:1 }} 50%,100% {{ opacity:0 }} }}
-    .cur {{ animation:blink 1.15s steps(1,end) infinite }}
-  </style>
-  <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="18" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".5" stroke-width="1.5"/>
-  {corner_brackets(W, H)}
-  <text x="48" y="46" font-family="{FONT_MONO}" font-size="14" letter-spacing="2.4" fill="#8fa0b8">{esc(index)}</text>
-  <text x="48" y="104" font-family="{FONT_SANS}" font-size="36" font-weight="700" fill="#e6edf7" letter-spacing=".2">{esc(name)}</text>
-  <text x="48" y="142" font-family="{FONT_SANS}" font-size="17" fill="#cbd5e1">{esc(cn)}</text>
-  <text x="48" y="168" font-family="{FONT_SANS}" font-size="15" fill="#a8b3c7">{esc(en)}</text>
-  {''.join(chip_svg)}
-  <text x="48" y="272" font-family="{FONT_MONO}" font-size="14" letter-spacing="1" fill="#8fa0b8">{esc(meta)}</text>
-  <text x="1152" y="46" font-family="{FONT_MONO}" font-size="14" letter-spacing="1.2" fill="url(#pText)" text-anchor="end">VIEW ON GITHUB ↗</text>
-  <g>
-    <rect x="742" y="88" width="410" height="200" rx="14" fill="#05080f" stroke="#1e3a5f" stroke-opacity=".9"/>
-    <rect x="742" y="88" width="410" height="32" rx="14" fill="#0a1224"/>
-    <circle cx="762" cy="104" r="3.6" fill="#f87171" opacity=".7"/>
-    <circle cx="776" cy="104" r="3.6" fill="#fbbf24" opacity=".7"/>
-    <circle cx="790" cy="104" r="3.6" fill="#4ade80" opacity=".7"/>
-    <text x="806" y="109" font-family="{FONT_MONO}" font-size="13" letter-spacing="1" fill="#7c8aa5">terminal · quick start</text>
-    <text x="762" y="154" font-family="{FONT_MONO}" font-size="14" fill="#7c8aa5">$</text>
-    <text x="780" y="154" font-family="{FONT_MONO}" font-size="14" fill="#cbd5e1">{esc(cmd1)}</text>
-    <text x="762" y="186" font-family="{FONT_MONO}" font-size="14" fill="#7c8aa5">$</text>
-    <text x="780" y="186" font-family="{FONT_MONO}" font-size="14" fill="#67e8f9">{esc(cmd2)}</text>
-    <text x="762" y="228" font-family="{FONT_MONO}" font-size="14" fill="#4ade80">✓ {esc(status)}</text>
-    <rect x="{cursor_x:.0f}" y="214" width="7" height="16" rx="2" fill="#67e8f9" class="cur"/>
-    <text x="{note_x:.0f}" y="228" font-family="{FONT_SANS}" font-size="14" fill="#8fa0b8">{esc(status_note)}</text>
+  <rect x="0.75" y="0.75" width="{W - 1.5}" height="{H - 1.5}" rx="16" fill="url(#pBg)" stroke="url(#pBorder)" stroke-opacity=".5" stroke-width="1.5"/>
+  {corner_brackets(W, H, pad=22, size=14)}
+  <text x="30" y="42" font-family="{FONT_MONO}" font-size="12.5" letter-spacing="2.2" fill="#8fa0b8">{esc(index)}</text>
+  <g transform="translate({tag_x:.0f} 26)">
+    <rect x="0" y="0" width="{tag_w:.0f}" height="24" rx="7" fill="{tag_color}" fill-opacity=".12" stroke="{tag_color}" stroke-opacity=".45"/>
+    <text x="{tag_w / 2:.0f}" y="16.5" font-family="{FONT_MONO}" font-size="12" letter-spacing="1.3" fill="{tag_color}" text-anchor="middle">{esc(tag)}</text>
   </g>
+  <text x="30" y="88" font-family="{FONT_SANS}" font-size="{name_size}" font-weight="700" fill="#e6edf7" letter-spacing=".2">{esc(name)}</text>
+  <text x="30" y="124" font-family="{FONT_SANS}" font-size="16" fill="#cbd5e1">{esc(cn)}</text>
+  <text x="30" y="148" font-family="{FONT_SANS}" font-size="13.5" fill="#a8b3c7">{esc(en)}</text>
+  <path d="M30 166 H520" stroke="#22d3ee" stroke-opacity=".1" stroke-width="1"/>
+  <text x="30" y="190" font-family="{FONT_MONO}" font-size="13" letter-spacing=".8" fill="#8fa0b8">{esc(meta)}</text>
+  <text x="536" y="191" font-family="{FONT_MONO}" font-size="17" fill="url(#pText)" text-anchor="end">↗</text>
 </svg>
 """
 
@@ -785,38 +763,59 @@ def main() -> None:
     write("capability.svg", capability_card())
     write("stack.svg", stack_marquee())
     write("stack-matrix.svg", stack_matrix())
-    write(
-        "repo-agent-blackbox.svg",
-        featured_repo_card(
-            index="OPEN SOURCE · 01",
+
+    projects = [
+        dict(
+            name="feronavi",
+            cn="为人和 Agent 而生的开源项目协作平台，内置 RAG 与 MCP。",
+            en="Self-hosted collaboration workspace with built-in RAG and MCP.",
+            tag="MCP · RAG", tag_color="#4ade80",
+            meta="TypeScript · AGPL-3.0 · 自托管",
+            aria="feronavi — self-hosted collaboration workspace with RAG and MCP",
+        ),
+        dict(
+            name="PP-Clash",
+            cn="开箱即用的跨平台 Clash 客户端：Tauri + mihomo。",
+            en="Cross-platform Clash client built with Tauri and mihomo.",
+            tag="DESKTOP", tag_color="#fb923c",
+            meta="TypeScript · AGPL-3.0 · v0.2.2",
+            aria="PP-Clash — cross-platform Clash client built with Tauri and mihomo",
+        ),
+        dict(
+            name="marble-wreckers",
+            cn="弹珠拆迁队：论坛水楼题材的弹珠 Roguelike。",
+            en="Marble Wreckers — a marble roguelike that runs in the browser.",
+            tag="GAME", tag_color="#f472b6",
+            meta="TypeScript · Canvas 2D · H5",
+            aria="marble-wreckers — a marble roguelike browser game",
+        ),
+        dict(
             name="agent-blackbox",
-            cn="AI 编程 agent 的飞行记录仪：本地优先，回放、归因、对比。",
-            en="Flight recorder for AI coding agents — replay, attribution, diff.",
-            chips=[("REPLAY", "#67e8f9"), ("COST", "#4ade80"), ("COMPARE", "#f472b6"), ("LOCAL-FIRST", "#fb923c")],
-            meta="TypeScript · MIT · Node ≥ 22.19 · DSH 插件已上 npm",
-            cmd1="npm install",
-            cmd2="npm run demo:ui",
-            status="local-first",
-            status_note="无遥测 · 零运行时依赖",
+            cn="AI 编程 agent 的飞行记录仪：回放、归因、对比。",
+            en="Flight recorder for coding agents — replay, attribution, diff.",
+            tag="AGENT", tag_color="#67e8f9",
+            meta="TypeScript · MIT · 6 ★",
             aria="agent-blackbox — local-first flight recorder for AI coding agents",
         ),
-    )
-    write(
-        "repo-dsh-mcp-skills-board.svg",
-        featured_repo_card(
-            index="OPEN SOURCE · 02",
+        dict(
             name="dsh-mcp-skills-board",
-            cn="DSH 的 MCP / 技能管理面板：四态开关、MCP 增删改、导入导出与模板。",
-            en="Codex-style MCP & Skills panel for DeepSeek Harness — toggles, templates.",
-            chips=[("MCP", "#67e8f9"), ("SKILLS", "#a78bfa"), ("TEMPLATES", "#f472b6"), ("NPM", "#fb923c")],
-            meta="JavaScript · MIT · npm 已发布 · DSH 插件",
-            cmd1="dsh plugin --profile desktop add",
-            cmd2="dsh-mcp-skills-board",
-            status="installed",
-            status_note="侧栏即可见 · ready in the sidebar",
+            cn="DSH 的 MCP / 技能管理面板，四态开关与模板。",
+            en="MCP and Skills panel for DeepSeek Harness.",
+            tag="DSH PLUGIN", tag_color="#a78bfa",
+            meta="JavaScript · MIT · npm 0.3.0",
             aria="dsh-mcp-skills-board — MCP and Skills panel for DeepSeek Harness",
         ),
-    )
+        dict(
+            name="dsh-agent-blackbox",
+            cn="把 agent-blackbox 装进 DSH 侧栏的官方插件。",
+            en="DSH plugin: the blackbox dashboard inside the sidebar.",
+            tag="DSH PLUGIN", tag_color="#a78bfa",
+            meta="JavaScript · npm 0.1.2",
+            aria="dsh-agent-blackbox — DSH plugin for the agent-blackbox dashboard",
+        ),
+    ]
+    for i, pr in enumerate(projects, start=1):
+        write(f"proj-{pr['name'].lower()}.svg", project_card(index=f"{i:02d}", **pr))
 
 
 if __name__ == "__main__":
