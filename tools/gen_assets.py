@@ -774,12 +774,12 @@ def main() -> None:
             aria="feronavi — self-hosted collaboration workspace with RAG and MCP",
         ),
         dict(
-            name="PP-Clash",
+            name="pp-clash",
             cn="开箱即用的跨平台 Clash 客户端：Tauri + mihomo。",
             en="Cross-platform Clash client built with Tauri and mihomo.",
             tag="DESKTOP", tag_color="#fb923c",
             meta="TypeScript · AGPL-3.0 · v0.2.2",
-            aria="PP-Clash — cross-platform Clash client built with Tauri and mihomo",
+            aria="pp-clash — cross-platform Clash client built with Tauri and mihomo",
         ),
         dict(
             name="marble-wreckers",
