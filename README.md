@@ -8,7 +8,7 @@
 
 <div align="center">
 
-<a href="mailto:cyp_95@foxmail.com"><img src="https://img.shields.io/badge/Open_to_Work-AI_Agent_%2F_Full--Stack-22c55e?style=for-the-badge&labelColor=0b1220" alt="Open to work"></a>
+<a href="mailto:cyp_95@foxmail.com"><img src="https://img.shields.io/badge/Open_to_Work-AI_Agent-22c55e?style=for-the-badge&labelColor=0b1220" alt="Open to work"></a>
 <a href="https://www.npmjs.com/package/dsh-mcp-skills-board"><img src="https://img.shields.io/npm/v/dsh-mcp-skills-board?style=for-the-badge&label=skills-board&labelColor=0b1220&color=22d3ee&logo=npm&logoColor=ffffff" alt="npm · dsh-mcp-skills-board"></a>
 <a href="https://www.npmjs.com/package/dsh-agent-blackbox"><img src="https://img.shields.io/npm/v/dsh-agent-blackbox?style=for-the-badge&label=blackbox&labelColor=0b1220&color=a78bfa&logo=npm&logoColor=ffffff" alt="npm · dsh-agent-blackbox"></a>
 <a href="https://github.com/JasperPengC?tab=repositories"><img src="https://img.shields.io/badge/Open_Source-6_projects-f472b6?style=for-the-badge&labelColor=0b1220" alt="Open source"></a>
